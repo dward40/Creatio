@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Покемоны" />
+			<Item Name="Columns.DsnHeight.Caption" Value="Высота" />
+			<Item Name="Columns.DsnLookupType.Caption" Value="Тип" />
+			<Item Name="Columns.DsnName.Caption" Value="Название" />
+			<Item Name="Columns.DsnNotes.Caption" Value="Заметки" />
+			<Item Name="Columns.DsnPokemonPhoto.Caption" Value="Фото покемона" />
+			<Item Name="Columns.DsnWeight.Caption" Value="Вес" />
+			<Item Name="EventsProcessSchema.Caption" Value="Бизнес-процесс" />
+		</Items>
+	</Group>
+</Resources>

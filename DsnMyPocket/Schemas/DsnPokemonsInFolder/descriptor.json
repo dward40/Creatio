@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "1111ca3a-f864-42bb-af5f-1cf010aec2ea",
+    "Name": "DsnPokemonsInFolder",
+    "ModifiedOnUtc": "\/Date(1638955970000)\/",
+    "Parent": {
+      "UId": "4f63bafb-e9e7-4082-b92e-66b97c14017c",
+      "Name": "BaseItemInFolder"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Покемоны в группе"
+  }
+}

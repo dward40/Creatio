@@ -1,0 +1,100 @@
+= MetaData.Schema.UId "c8195ed4-311d-4d20-8790-f2285041157a"
+= MetaData.Schema.A2 "DsnPokemons"
+= MetaData.Schema.A5 "ae672e77-44bd-48a3-a20e-7eebc708f9a3"
+= MetaData.Schema.B6 "f1b69213-c6ed-eab1-67e9-f7fa99e843ad"
+= MetaData.Schema.B8 "7.18.4.1532"
+= MetaData.Schema.EG1.UId "a86efd98-5c14-4caa-8ca5-c66dfa8d2c91"
+= MetaData.Schema.EG1.A2 "DsnPokemonsEventsProcess"
+= MetaData.Schema.EG1.A5 "ae672e77-44bd-48a3-a20e-7eebc708f9a3"
+= MetaData.Schema.EG1.B1 []
+= MetaData.Schema.EG1.B3 []
++ MetaData.Schema.EG1.B8 "7.18.4.1532"
+= MetaData.Schema.EG1.FJ1 []
+= MetaData.Schema.EG1.BK37.A3 "bb4d6607-026b-4b27-b640-8f5c77c1e89d"
+= MetaData.Schema.EG1.BK37.A4 "bb4d6607-026b-4b27-b640-8f5c77c1e89d"
+= MetaData.Schema.EG1.BK3 []
+= MetaData.Schema.EG1.BK4 []
++ MetaData.Schema.EG1.Labels []
+= MetaData.Schema.D8 "1bab9dcf-17d5-49f8-9536-8e0064f1dce0"
++ MetaData.Schema.D4 "22336225-8804-490c-a086-96d9a612fe3e"
++ MetaData.Schema.D2 {
+  "UId": "22336225-8804-490c-a086-96d9a612fe3e",
+  "A2": "DsnName",
+  "A3": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A4": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd",
+  "E2": 1,
+  "E5": false
+}
++ MetaData.Schema.D2 {
+  "UId": "126825f7-5673-4201-ae3b-aa2f43a4b55d",
+  "A2": "DsnNotes",
+  "A3": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A4": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "c0f04627-4620-4bc0-84e5-9419dc8516b1",
+  "E5": false
+}
++ MetaData.Schema.D2 {
+  "UId": "28a90b9a-b785-4311-b5a8-320dd78beeaf",
+  "A2": "DsnWeight",
+  "A3": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A4": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "5cc8060d-6d10-4773-89fc-8c12d6f659a6"
+}
++ MetaData.Schema.D2 {
+  "UId": "3982dbbd-4515-40a1-9f47-9e0579511b46",
+  "A2": "DsnHeight",
+  "A3": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A4": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "5cc8060d-6d10-4773-89fc-8c12d6f659a6"
+}
++ MetaData.Schema.D2 {
+  "UId": "2c440298-cc40-4ebf-a670-0f916ff6abd0",
+  "A2": "DsnLookupType",
+  "A3": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A4": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "b96a49c8-9955-4165-bc9e-0db2f0d8ab22",
+  "E2": 1,
+  "E6": true,
+  "E17": "DsnLookupTypeId",
+  "E18": "DsnLookupTypeName"
+}
++ MetaData.Schema.D2 {
+  "UId": "7171a216-8fc4-f215-13ed-72583c908c08",
+  "A2": "DsnPokemonPhoto",
+  "A3": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A4": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "b039feb0-ee7c-4884-8aa6-d6d45d84316f",
+  "S4": "93986bfe-2dbd-46bc-9bf9-d03dfefbf3b8",
+  "E6": true,
+  "E17": "DsnPokemonPhotoId",
+  "E18": "DsnPokemonPhotoName"
+}
+~ MetaData.Schema.D2 ["ae0e45ca-c495-4fe7-a39d-3ab7278e1617","e80190a5-03b2-4095-90f7-a193a960adee","ebf6bb93-8aa6-4a01-900d-c6ea67affe21","9928edec-4272-425a-93bb-48743fee4b04","3015559e-cbc6-406a-88af-07f7930be832","3fabd836-6a53-4d8d-9069-6df88d9dae1e","22336225-8804-490c-a086-96d9a612fe3e","126825f7-5673-4201-ae3b-aa2f43a4b55d","28a90b9a-b785-4311-b5a8-320dd78beeaf","3982dbbd-4515-40a1-9f47-9e0579511b46","2c440298-cc40-4ebf-a670-0f916ff6abd0","7171a216-8fc4-f215-13ed-72583c908c08"]
+= MetaData.Schema.D20.A2 "DsnPokemonsEvents"
+- MetaData.Schema.EG1.B6
+- MetaData.Schema.EG1.BK29
+- MetaData.Schema.EG1.BK30
+- MetaData.Schema.D1
+- MetaData.Schema.D20.A5
+- MetaData.Schema.D20.FA4
+- MetaData.Schema.D20.FA5
+- MetaData.Schema.D20.FA6
+- MetaData.Schema.D20.FA7
+- MetaData.Schema.D20.FA11
+- MetaData.Schema.D20.FA12
+- MetaData.Schema.D20.FA15
++ MetaData.Schema.B7 false
++ MetaData.Schema.D2.["ae0e45ca-c495-4fe7-a39d-3ab7278e1617"].E16 false
++ MetaData.Schema.D2.["e80190a5-03b2-4095-90f7-a193a960adee"].E16 false
++ MetaData.Schema.D2.["ebf6bb93-8aa6-4a01-900d-c6ea67affe21"].E16 false
++ MetaData.Schema.D2.["9928edec-4272-425a-93bb-48743fee4b04"].E16 false
++ MetaData.Schema.D2.["3015559e-cbc6-406a-88af-07f7930be832"].E16 false
++ MetaData.Schema.D2.["3fabd836-6a53-4d8d-9069-6df88d9dae1e"].E16 false

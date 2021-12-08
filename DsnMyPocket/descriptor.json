@@ -1,0 +1,15 @@
+﻿{
+  "Descriptor": {
+    "UId": "f1b69213-c6ed-eab1-67e9-f7fa99e843ad",
+    "Name": "DsnMyPocket",
+    "ModifiedOnUtc": "\/Date(1638951758000)\/",
+    "Maintainer": "Customer",
+    "DependsOn": [
+      {
+        "UId": "e14dcfb1-e53c-4439-a876-af7f97083ed9",
+        "PackageVersion": "7.8.0",
+        "Name": "SalesEnterprise"
+      }
+    ]
+  }
+}

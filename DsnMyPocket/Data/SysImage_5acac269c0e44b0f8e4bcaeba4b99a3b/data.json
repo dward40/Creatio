@@ -1,0 +1,36 @@
+﻿{
+  "PackageData": [
+    {
+      "Row": [
+        {
+          "SchemaColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
+          "Value": "5acac269-c0e4-4b0f-8e4b-caeba4b99a3b"
+        },
+        {
+          "SchemaColumnUId": "08ccfffd-cb3e-47c3-9729-1d043a5812e4",
+          "Value": "\/Date(1638956411558+0300)\/"
+        },
+        {
+          "SchemaColumnUId": "d245dcaf-23bd-4b73-8718-26fdf38b443b",
+          "Value": "%D1%84%D0%BE%D1%80%D0%BC%D0%B0%201.svg"
+        },
+        {
+          "SchemaColumnUId": "1e236958-f206-4fde-8a0e-6783fc223424",
+          "Value": "PHN2ZyB2ZXJzaW9uPSIxLjIiIGJhc2VQcm9maWxlPSJ0aW55LXBzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NSA1NCIgd2lkdGg9IjY1IiBoZWlnaHQ9IjU0Ij4KCTx0aXRsZT7RhNC+0YDQvNCwIDE8L3RpdGxlPgoJPHN0eWxlPgoJCXRzcGFuIHsgd2hpdGUtc3BhY2U6cHJlIH0KCQkuc2hwMCB7IGZpbGw6ICNmZmZmZmYgfSAKCTwvc3R5bGU+Cgk8cGF0aCBpZD0i0YTQvtGA0LzQsCAxIiBjbGFzcz0ic2hwMCIgZD0iTTAgMEw2NSAwTDY1IDU0TDAgNTRMMCAwWiIgLz4KPC9zdmc+"
+        },
+        {
+          "SchemaColumnUId": "be95e737-14e9-4253-b0c4-e280da05434d",
+          "Value": "image/svg+xml"
+        },
+        {
+          "SchemaColumnUId": "b3cd8485-7bd8-4b70-b2dd-bc41e45e9992",
+          "Value": false
+        },
+        {
+          "SchemaColumnUId": "90801d7c-a189-4afe-9c3a-a202fbf242d8",
+          "Value": "null"
+        }
+      ]
+    }
+  ]
+}

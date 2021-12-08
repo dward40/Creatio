@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "05ca571d-4997-4f31-96eb-4cdbc7fc672b",
+    "Name": "DsnPokemonsTag",
+    "ModifiedOnUtc": "\/Date(1638955971000)\/",
+    "Parent": {
+      "UId": "9e3f203c-e905-4de5-9468-335b193f2439",
+      "Name": "BaseTag"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Тег раздела Покемоны"
+  }
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "177505e6-1883-4702-a203-791e9d6f2cdb",
+    "Name": "DsnPokemonsFile",
+    "ModifiedOnUtc": "\/Date(1638955967000)\/",
+    "Parent": {
+      "UId": "556c5867-60a7-4456-aae1-a57a122bef70",
+      "Name": "File"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Файл и ссылка объекта Покемоны"
+  }
+}

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Покемоны в группе" />
+			<Item Name="Columns.DsnPokemons.Caption" Value="Покемоны" />
+			<Item Name="Columns.Folder.Caption" Value="Группа Покемоны" />
+			<Item Name="EventsProcessSchema.Caption" Value="Бизнес-процесс" />
+		</Items>
+	</Group>
+</Resources>
