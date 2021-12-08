@@ -1,4 +1,4 @@
-define("DsnPokemonse6755c65Section", [], function() {
+define("DsnPokemonsSection", [], function() {
 	return {
 		entitySchemaName: "DsnPokemons",
 		details: /**SCHEMA_DETAILS*/{}/**SCHEMA_DETAILS*/,
