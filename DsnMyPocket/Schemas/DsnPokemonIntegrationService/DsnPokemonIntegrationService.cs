@@ -33,20 +33,36 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
 
 
 
+		// Я бы обернул весь метод или хотя бы запрос в API
+		// в try/catch для логирования ошибки, в случае ее возникновения. 
+		// Как пример банальной ошибки можно привести таймаут от api покемонов.
         public string GetPokemonInfo(string name)
         {
+			//У типа данных string есть метод, проверяющий строку на пустоту. Используй его, вместо name == ""
             if (name == ""|| name.Contains("/") == true)
             {
-                return "������� ��� ��������";
+			// Использовать локализуемую строку вместо текста
+                return "Ââåäèòå èìÿ ïîêåìîíà"; 
             }
             var findPokemon = findPokemonInBase(name);
-            if (findPokemon == "00000000-0000-0000-0000-000000000000")
+			// у типа данных Guid есть свойство равное "00000000-0000-0000-0000-000000000000". Используй его
+			// В данном случае, чтобы не плодить лишний отступ для большого кол-ва кода - можно использовать отрицательное условие
+			// Пример:
+			// if(!findPokemon.IsEmpty()) ИЛИ if(findPokemon != Guid.Empty)
+			//	{
+			//		return "такой уже есть";
+			//	}
+            if (findPokemon == "00000000-0000-0000-0000-000000000000") 
             {
-
+				
+				// Получение ссылки вынести в отдельный метод
                 uri = (string)Terrasoft.Core.Configuration.SysSettings.GetValue(UserConnection, "DsnUriPokemon");
 
-
+					// Вынести запрос к API в отдельный класс DsnPokemonApiClient	
                     var result = httpClient.GetAsync(uri + name).Result;
+					
+					// Экземпляр логгера сделать глобальным
+					// Настроить конфиги NLOG (помню, что лог писался в Common.log). Должен писаться в файл PokemonIntegration.log
                     var log = LogManager.GetLogger("API Pokemon.co");
                     log.Debug(uri);
                     log.Trace(name);
@@ -56,19 +72,23 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
                     {
                         var body = result.Content;
                         string responseString = body.ReadAsStringAsync().Result;
+						//Класс Root переименовать в DsnPokemonDTO (DTO - Data Transfer Object)
                         var ability = JsonConvert.DeserializeObject<Root>(responseString);
                         var weight = ability.weight;
                         var height = ability.height;
                         var imgPokemon = ability.sprites.front_default;
                         CreatePokemon(name, height, weight, imgPokemon);
-                        return ("������� ������ " + name);
+						// Использовать локализуемую строку вместо текста
+                        return ("Ïîêåìîí ñîçäàí " + name);
                     }
                     else
                     {
-                        return "�������� � ����� ������ ���";
+					// Использовать локализуемую строку вместо текста
+                        return "Ïîêåìîíà ñ òàêèì èìåíåì íåò";
                     }
                 }
-                return "����� ������� � ��� ��� ����";
+				// Использовать локализуемую строку вместо текста
+                return "Òàêîé ïîêåìîí ó íàñ óæå åñòü";
             }
 
         public void CreatePokemon(string name, int height, int weight, string imgPokemon)
@@ -77,10 +97,13 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
             var pokemon = pokemonSchema.CreateEntity(UserConnection);
             var imgGiud = SavePokemonImgToBase64(imgPokemon, name);
             pokemon.SetDefColumnValues();
+			// Тут нет смысла проставлять Id, т.к. он уже проставится в методе SetDefColumnValues
+			// В крайнем случае он сгенерируется на уровне БД
             pokemon.SetColumnValue("Id", Guid.NewGuid());
             pokemon.SetColumnValue("DsnName", name);
             pokemon.SetColumnValue("DsnWeight", weight);
             pokemon.SetColumnValue("DsnHeight", height);
+			// Id вынести в константу 
             pokemon.SetColumnValue("DsnLookupTypeId", "d7e5ab09-b2ed-45f5-8966-b69fad0c0b87");
             pokemon.SetColumnValue("DsnPokemonPhotoId", imgGiud);
             pokemon.Save();
@@ -88,6 +111,22 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
 
         public Guid SavePokemonImgToBase64(string imageUrl, string name)
         {
+			// Тут конечно надо использовать ImageApi
+			// Если вкратце, то нужно получить memoryStream, скачав изображение
+			// Пример:
+			// public Guid GetProfilePhotoIdByUrl(string url, string imageName) {
+			// 	var imageId = Guid.NewGuid();
+			// 	WebRequest imageRequest = WebRequest.Create(url);
+			// 	using (WebResponse webResponse = imageRequest.GetResponse()) {
+			// 		using (Stream webResponseStream = webResponse.GetResponseStream()) {
+			// 			using (var imageMemoryStream = new MemoryStream())	{
+			// 				webResponseStream.CopyTo(imageMemoryStream);
+			// 				_imageApi.Save(imageMemoryStream, "image/png", imageName, imageId);
+			// 			}
+			// 		}
+			// 	}
+			// 	return imageId;
+			// }
             WebClient downloader = new WebClient();
             var base64 = downloader.DownloadData(imageUrl);
             var imageSchema = UserConnection.EntitySchemaManager.GetInstanceByName("SysImage");
@@ -104,6 +143,8 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
 
         }
 
+		//Правильнее было бы назвать метод GetPokemonId (глагол + название сущности + название колонки)
+		// Возвращаемый тип данных должен быть Guid, так как запрос получает именно Id
         public string findPokemonInBase(string name)
         {
             var result = "";
@@ -111,6 +152,8 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
                     .Column("Id")
                 .From("DsnPokemons")
                 .Where("DsnName").IsEqual(Column.Parameter(name)) as Select;
+				//тут не нужен ToString(), оставь Guid
+				// Чтобы не создавать отдельную переменную result можно писать return select.ExecuteScalar<Guid>();
             result = select.ExecuteScalar<Guid>().ToString();
             return result;
         }
