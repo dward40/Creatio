@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Схема детали: &quot;Любимые покемоны контакта&quot;" />
+			<Item Name="Columns.DsnLookupContact.Caption" Value="Контакт" />
+			<Item Name="Columns.DsnLookupPokemon.Caption" Value="Покемон" />
+			<Item Name="Columns.DsnName.Caption" Value="Name" />
+			<Item Name="EventsProcessSchema.Caption" Value="Бизнес-процесс" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "c942cb60-1835-4a3c-b8e6-ca3e276fe415",
+    "Name": "KnowledgeBaseSectionV2",
+    "ModifiedOnUtc": "\/Date(1639727245000)\/",
+    "Parent": {
+      "UId": "4d21db49-2ab4-4dff-8790-9b4741b7bf0f",
+      "Name": "KnowledgeBaseSectionV2"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема раздела: \"База знаний\""
+  }
+}

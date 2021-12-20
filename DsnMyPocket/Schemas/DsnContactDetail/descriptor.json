@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "ff471b78-00d4-4cd5-be50-9745d416580e",
+    "Name": "DsnContactDetail",
+    "ModifiedOnUtc": "\/Date(1639486479000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема детали: \"Любимые покемоны контакта\""
+  }
+}

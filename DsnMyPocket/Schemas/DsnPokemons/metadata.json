@@ -16,7 +16,11 @@
 = MetaData.Schema.EG1.BK4 []
 + MetaData.Schema.EG1.Labels []
 = MetaData.Schema.D8 "1bab9dcf-17d5-49f8-9536-8e0064f1dce0"
++ MetaData.Schema.D29 "null"
++ MetaData.Schema.D30 "null"
++ MetaData.Schema.D31 "null"
 + MetaData.Schema.D4 "22336225-8804-490c-a086-96d9a612fe3e"
++ MetaData.Schema.D5 "7171a216-8fc4-f215-13ed-72583c908c08"
 + MetaData.Schema.D2 {
   "UId": "22336225-8804-490c-a086-96d9a612fe3e",
   "A2": "DsnName",
@@ -77,7 +81,27 @@
   "E17": "DsnPokemonPhotoId",
   "E18": "DsnPokemonPhotoName"
 }
-~ MetaData.Schema.D2 ["ae0e45ca-c495-4fe7-a39d-3ab7278e1617","e80190a5-03b2-4095-90f7-a193a960adee","ebf6bb93-8aa6-4a01-900d-c6ea67affe21","9928edec-4272-425a-93bb-48743fee4b04","3015559e-cbc6-406a-88af-07f7930be832","3fabd836-6a53-4d8d-9069-6df88d9dae1e","22336225-8804-490c-a086-96d9a612fe3e","126825f7-5673-4201-ae3b-aa2f43a4b55d","28a90b9a-b785-4311-b5a8-320dd78beeaf","3982dbbd-4515-40a1-9f47-9e0579511b46","2c440298-cc40-4ebf-a670-0f916ff6abd0","7171a216-8fc4-f215-13ed-72583c908c08"]
++ MetaData.Schema.D2 {
+  "UId": "16893b3f-3e90-489d-a9f3-1a219305c2ff",
+  "A2": "DsnHw",
+  "A3": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A4": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "5cc8060d-6d10-4773-89fc-8c12d6f659a6"
+}
++ MetaData.Schema.D2 {
+  "UId": "82d63185-d3bc-489e-b840-e9f8a9c9327b",
+  "A2": "DsnContact",
+  "A3": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A4": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "16be3651-8fe2-4159-8dd0-a803d4683dd3",
+  "E6": true,
+  "E17": "DsnContactId",
+  "E18": "DsnContactName"
+}
+~ MetaData.Schema.D2 ["ae0e45ca-c495-4fe7-a39d-3ab7278e1617","e80190a5-03b2-4095-90f7-a193a960adee","ebf6bb93-8aa6-4a01-900d-c6ea67affe21","9928edec-4272-425a-93bb-48743fee4b04","3015559e-cbc6-406a-88af-07f7930be832","3fabd836-6a53-4d8d-9069-6df88d9dae1e","22336225-8804-490c-a086-96d9a612fe3e","126825f7-5673-4201-ae3b-aa2f43a4b55d","28a90b9a-b785-4311-b5a8-320dd78beeaf","3982dbbd-4515-40a1-9f47-9e0579511b46","2c440298-cc40-4ebf-a670-0f916ff6abd0","7171a216-8fc4-f215-13ed-72583c908c08","16893b3f-3e90-489d-a9f3-1a219305c2ff","82d63185-d3bc-489e-b840-e9f8a9c9327b"]
 = MetaData.Schema.D20.A2 "DsnPokemonsEvents"
 - MetaData.Schema.EG1.B6
 - MetaData.Schema.EG1.BK29

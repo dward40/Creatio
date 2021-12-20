@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "f1fd205c-5655-4d1c-8d49-883157c19dd8",
+    "Name": "DsnSchemabba61df3Detail",
+    "ModifiedOnUtc": "\/Date(1639056355000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема детали: \"Движение\""
+  }
+}
