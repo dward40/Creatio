@@ -1,3 +1,4 @@
+// Исправить отступы
 define("DsnPokemonsSection", ["RightUtilities", "ServiceHelper", "ProcessModuleUtilities", "css!DsnCSSButton"],function(RightUtilities, ServiceHelper, ProcessModuleUtilities) {
 	return {
 		entitySchemaName: "DsnPokemons",
