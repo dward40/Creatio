@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Средства связи контакта (устаревшая версия)" />
+			<Item Name="Images.08fc5adf-8443-449c-8efc-2fcf5cda22ba.Image" Type="Image" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAkCAYAAACAGLraAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKRSURBVEhLpZTNaxNRFMW78F/oQgS1VF2YQBSlrdaaGrPyo8000+DFlSDdCoqKWEEUFEHX1o0LUakpNUXmQyVZqAWl6iqLLlxZELryD9A4x/MmfUPsPM1MHTjM5J7c897M3Pn1APgvGYtpZCymUXSRt/y+vOWcyFtuyaSRcac0UnJ47YzlLS9rCHArlHTqSNkLz/2D1VCZ/LwUbE9GJ1wxBUx0NmvlCjW5duezvP2wKgsvv0ruaE0OjTsVU4DaatSoVt9xYE6sM3W1WiivsSLZ0ecyPObYuu+vAUrbB57J5ZtLYfPd+03pzTzWt9U9oG+gKheut5uVWq1AXr/5JjsPzgkfaPeAPcUFOXb6lbj1lTBgcWlVpi4uyt5iLdkOihVferNPpDLVCAOu3Poom7Y8lOKknyxAqX+oKuem34cB92aasnXfrPaMAZZu1Nq2f1Yu3Wg/h5lHy7I591R7k6aAU7pRa/fheTl7/p00l7/L1dufZBcfoPYMAX6GY1qmaWsVyp49fNKxOTz20PEXNqdwzfMGYwEblbGYRsZiGhmLaWQsppGxmEbGYhpFF5yDB5yDH3zPv6jWevELbBFp9JyfnIOGIcDFevHbD8/EWSgiDRwmEGlsiQeolWMhRBqINBBpINLAqQSRZgxQW40a1epEGog09efwINJApIFIC/jz3wFKRBqINNoAkQYiTd9W9wAiDUQarfZBpIFIA5EGPtDuAUQaiDQQabQBIg1EGoi0ZDsg0kCkgUijDRBpINJApCULUCLSQKTRBog0EGnaMwbEXiORBiKNNkCkgUiLPNWj1BnwR7MSkQYiDUQaiDQQaZFnCPDrHNOAZiQiLSDSAg5PQKQFnMI1z/sSC9iojMXkQs9vopG+EGJgJHEAAAAASUVORK5CYII=" />
+			<Item Name="Images.2882d13b-67a9-4109-a91a-4eaff135bf79.Image" Type="Image" Value="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEiSURBVFhHxZTBDcIwEAQpgRIogZJSAiVQAaIESqAE/nwogRLowOyiWDpZkwQMOh6jKJPDa9nHrUopfwVlJigzQZkJykxQZoIyE5TE4TpsxJq+fQPKiEPFSRTxEFuq6wVlRIG3Mbzi95+dBMpIE17ZU20PKCMK87G3G3hQbQ8oIwqr9x+5UG0PKCMKc/fH8NweMAqMp/Cz+zcoWxTqU6i9cKeaXlASCt6NGzAnqukB5RQKPodN7OD7VmxaPwfKKbS4p2IcTO6NV0PqOQR/rH4JlHN4YdFOx0vzblyzOLZRLqGFvYl4HVMsDiyU76IANyZNysjsVaD8BAX4L0rT0hzpNxGUPSisbqSeyI3qWlBmgjITlJmgzARlJigzQZkJyjzK6glDdbvLzSEyoAAAAABJRU5ErkJggg==" />
+			<Item Name="Images.44274ac6-683c-4853-9300-7d334709bca2.Image" Type="Image" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAkCAYAAACAGLraAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGbSURBVEhLpdS7LwRRFMfxwRIbj8JrRSIepcYqRENBiAgSQoRWFBoahdYfIaqNP8O/sPgDNEqhU0iIR7LG94x71527Z7Nzo/hsZs49v5O9s3cniuP4X9RiCLUYIopKfDQ2jmVjBO0YQM42zGHSXPukvufZwQq6bNMaZGEKraZm+WFrAXnbNGqKYgtF9EK+phtydSJ5Bk0YxAa0xnraUH2IM6aY1SZ+s+aiA6vQmjWyxdQAUYDsXwv48qgZ0Aet2TeNv1zqphQ3Yxa70MKLSGf4aEE/5Ccbgpw2LSyHLR02A3KYwDps87bDHt/asND+ICHUYgi1GEIthlCLIdRiCLUYQi36+L0v8WqcQ87NEQq24QllP2jWyogV71iyTZ+meIthb4AftJ5RtE0XzsI3rrGPY1PTzCdZLuTVdIqKWchqzA6Qv/C9s5BFpbpFswV5B3w4DY3cpAaYISeQ/WsB35Q24MBrqufOZlIDkptS3I0Hp9n34vYnGYo9OIScrDO8QQs/+mE7QN6FV/gyjUKehZUcXy0s1GIItZhdHP0AC/OLQo4DiakAAAAASUVORK5CYII=" />
+			<Item Name="Images.5e3f0b5a-ca9b-4e12-823b-86d83e27801a.Image" Type="Image" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOvAAADrwBlbxySQAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTFH80I3AAAAbklEQVQ4T6WSQQ7AIAgE/f/LjJ+i7oHGxUVrPUwMw0KMsZjZFVKeQEWttR8ciMQMNVtrBkY3ovoUANmSzFPhxHA2DCYBevgdWg0DKR082O5hpQRXN4hDqyWTyMKZpyILOapPgeuf+AcpT5DyO1YecBwKq5GCoPYAAAAASUVORK5CYII=" />
+			<Item Name="LocalizableStrings.ErrorRemoveMandrillBounce.Value" Value="Could not remove contact's email from Mandrill blacklist" />
+			<Item Name="LocalizableStrings.NonActualCaption.Value" Value="(invalid)" />
+			<Item Name="LocalizableStrings.NonTopicalAddressCaptionMenu.Caption" Value="NonTopicalAddressCaptionMenu" />
+			<Item Name="LocalizableStrings.NonTopicalAddressCaptionMenu.Value" Value="Invalid" />
+			<Item Name="LocalizableStrings.TopicalAddressCaptionMenu.Caption" Value="TopicalAddressCaptionMenu" />
+			<Item Name="LocalizableStrings.TopicalAddressCaptionMenu.Value" Value="Valid" />
+		</Items>
+	</Group>
+</Resources>

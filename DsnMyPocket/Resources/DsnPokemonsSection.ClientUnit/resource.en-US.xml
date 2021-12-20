@@ -4,6 +4,8 @@
 		<Items>
 			<Item Name="Caption" Value="Схема раздела: &quot;Покемоны&quot;" />
 			<Item Name="LocalizableStrings.Caption.Value" Value="Покемоны" />
+			<Item Name="LocalizableStrings.DsnAddPokemonApi.Value" Value="Добавить покемона из API" />
+			<Item Name="LocalizableStrings.DsnResultValue.Value" Value="Посчитать покемонов" />
 		</Items>
 	</Group>
 </Resources>

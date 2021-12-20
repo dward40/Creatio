@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="he-IL">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ErrorRemoveMandrillBounce.Value" Value="לא ניתן להסיר את הדוא&quot;ל של איש הקשר מהרשימה השחורה של Mandrill" />
+			<Item Name="LocalizableStrings.NonActualCaption.Value" Value="(לא חוקי)" />
+			<Item Name="LocalizableStrings.NonTopicalAddressCaptionMenu.Caption" Value="NonTopicalAddressCaptionMenu" />
+			<Item Name="LocalizableStrings.NonTopicalAddressCaptionMenu.Value" Value="לא חוקי" />
+			<Item Name="LocalizableStrings.TopicalAddressCaptionMenu.Caption" Value="TopicalAddressCaptionMenu" />
+			<Item Name="LocalizableStrings.TopicalAddressCaptionMenu.Value" Value="חוקי" />
+		</Items>
+	</Group>
+</Resources>

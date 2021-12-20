@@ -1,0 +1,68 @@
+= MetaData.Schema.UId "7573ec35-c1a2-4bfc-bfdb-c68ea9720027"
+= MetaData.Schema.A2 "DsnMovmType"
+= MetaData.Schema.A5 "ae672e77-44bd-48a3-a20e-7eebc708f9a3"
+= MetaData.Schema.B6 "f1b69213-c6ed-eab1-67e9-f7fa99e843ad"
+= MetaData.Schema.B8 "7.18.4.1532"
+= MetaData.Schema.EG1.UId "13881d20-e58b-485a-893e-aa397be6ae71"
+= MetaData.Schema.EG1.A2 "DsnMovmTypeEventsProcess"
+= MetaData.Schema.EG1.A5 "ae672e77-44bd-48a3-a20e-7eebc708f9a3"
+= MetaData.Schema.EG1.B1 []
+= MetaData.Schema.EG1.B3 []
++ MetaData.Schema.EG1.B8 "7.18.4.1532"
+= MetaData.Schema.EG1.FJ1 []
+= MetaData.Schema.EG1.BK37.A3 "bb4d6607-026b-4b27-b640-8f5c77c1e89d"
+= MetaData.Schema.EG1.BK37.A4 "bb4d6607-026b-4b27-b640-8f5c77c1e89d"
+= MetaData.Schema.EG1.BK3 []
+= MetaData.Schema.EG1.BK4 []
++ MetaData.Schema.EG1.Labels []
++ MetaData.Schema.D17 true
+= MetaData.Schema.D8 "1bab9dcf-17d5-49f8-9536-8e0064f1dce0"
++ MetaData.Schema.D4 "1ad2ebe3-f1ab-4971-a60d-d131307f6d8e"
++ MetaData.Schema.D2 {
+  "UId": "1ad2ebe3-f1ab-4971-a60d-d131307f6d8e",
+  "A2": "DsnName",
+  "A3": "7573ec35-c1a2-4bfc-bfdb-c68ea9720027",
+  "A4": "7573ec35-c1a2-4bfc-bfdb-c68ea9720027",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd",
+  "E5": false
+}
++ MetaData.Schema.D2 {
+  "UId": "35cdedd4-8ba6-4fe5-8a82-fbc5240c71bb",
+  "A2": "DsnDsnPokemons",
+  "A3": "7573ec35-c1a2-4bfc-bfdb-c68ea9720027",
+  "A4": "7573ec35-c1a2-4bfc-bfdb-c68ea9720027",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "E5": false,
+  "E6": true,
+  "E9": true,
+  "E17": "DsnDsnPokemonsId",
+  "E18": "DsnDsnPokemonsDsnName"
+}
++ MetaData.Schema.D2 {
+  "UId": "05cadbb7-d56b-4f02-aabb-aaad74e20755",
+  "A2": "DsnLookupMov",
+  "A3": "7573ec35-c1a2-4bfc-bfdb-c68ea9720027",
+  "A4": "7573ec35-c1a2-4bfc-bfdb-c68ea9720027",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "76ed8995-0498-44be-86e7-67dd37340af4",
+  "E6": true,
+  "E17": "DsnLookupMovId",
+  "E18": "DsnLookupMovName"
+}
+~ MetaData.Schema.D2 ["ae0e45ca-c495-4fe7-a39d-3ab7278e1617","e80190a5-03b2-4095-90f7-a193a960adee","ebf6bb93-8aa6-4a01-900d-c6ea67affe21","9928edec-4272-425a-93bb-48743fee4b04","3015559e-cbc6-406a-88af-07f7930be832","3fabd836-6a53-4d8d-9069-6df88d9dae1e","1ad2ebe3-f1ab-4971-a60d-d131307f6d8e","35cdedd4-8ba6-4fe5-8a82-fbc5240c71bb","05cadbb7-d56b-4f02-aabb-aaad74e20755"]
+- MetaData.Schema.EG1.B6
+- MetaData.Schema.EG1.BK29
+- MetaData.Schema.EG1.BK30
+- MetaData.Schema.D1
+- MetaData.Schema.D20
++ MetaData.Schema.B7 false
++ MetaData.Schema.D2.["ae0e45ca-c495-4fe7-a39d-3ab7278e1617"].E16 false
++ MetaData.Schema.D2.["e80190a5-03b2-4095-90f7-a193a960adee"].E16 false
++ MetaData.Schema.D2.["ebf6bb93-8aa6-4a01-900d-c6ea67affe21"].E16 false
++ MetaData.Schema.D2.["9928edec-4272-425a-93bb-48743fee4b04"].E16 false
++ MetaData.Schema.D2.["3015559e-cbc6-406a-88af-07f7930be832"].E16 false
++ MetaData.Schema.D2.["3fabd836-6a53-4d8d-9069-6df88d9dae1e"].E16 false
