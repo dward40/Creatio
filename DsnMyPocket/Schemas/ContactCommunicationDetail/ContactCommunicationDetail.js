@@ -3,31 +3,7 @@
         return {
             entitySchemaName: "ContactCommunication",
             methods: {
-				
-					
-	init: function () {
-        this.callParent(arguments);
-		console.log(this);
-		console.log("sa")
-        this.checkAdminRole();
-      },	
-	  
-	  		checkAdminRole: function () {
-		var currentUser = Terrasoft.SysValue.CURRENT_USER.value;
-				var serviceData = {
-					currentUser: currentUser
-				};
-        var config = {
-          serviceName: "DsnCheckRole",
-          methodName: "CheckAdmRoleUser",
-          timeout: 100000,
-          callback: function (response) {response.CheckRoleUserResult},
-          data: serviceData,
-          scope: this,
-        };
-        ServiceHelper.callService(config);
-      },
-				
+
 			
                 /**
                 * Возвращает запреты на использование.
@@ -56,6 +32,15 @@
                 }
             },
             diff: /**SCHEMA_DIFF*/[
+				{
+					"operation": "merge",
+					"name": "CommunicationsContainer",
+					"values": {
+						"generateId": false,
+						
+
+					}
+				},
 
 			]/**SCHEMA_DIFF*/
         };
