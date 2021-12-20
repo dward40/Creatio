@@ -68,6 +68,8 @@ define("DsnPokemonsSection", ["RightUtilities", "ServiceHelper", "ProcessModuleU
 			var id = this.get("Id");
 			console.log(id);
 			var count = this.sandbox.publish("CountDetail", {}, ["CountDetail"]);
+			// В коммите не должно быть кусков кода, оставшихся с дебаггинга
+			// В качестве исключения могут быть какие-нибудь куски кода, которые в данный момент не должны попасть на прод, но в следующем релизе будут нужны 
 			//debugger;
 			Terrasoft.showInformation("В любимчиках у " +count + " людей"); 
 		},
@@ -88,12 +90,14 @@ define("DsnPokemonsSection", ["RightUtilities", "ServiceHelper", "ProcessModuleU
 				className: "Terrasoft.TextEdit",
 			},
 			dataValueType: Terrasoft.DataValueType.TEXT,
+			// Использовать локализуемую строку вместо русского текста 
 			caption: "Введите имя:",
 			value: "",
 		},
 			
 	};
 		Terrasoft.utils.inputBox(
+	// Использовать локализуемую строку вместо русского текста 		
     	"Имя покемона",
 			
     function(returnCode, controlData) {
@@ -147,6 +151,7 @@ define("DsnPokemonsSection", ["RightUtilities", "ServiceHelper", "ProcessModuleU
 				Terrasoft.ComparisonType.EQUAL, "DsnLookupPokemon.DsnName", pokemon));
    				select.getEntityCollection(function (result) {
           			if (!result.success) {
+					// Использовать локализуемую строку вместо русского текста 
              		this.showInformationDialog("Ошибка запроса данных");
              		return;
           }
