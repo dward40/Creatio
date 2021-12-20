@@ -1,3 +1,4 @@
+// Переименовать страницу в читаемое название
 define("DsnSchema6f56b322Page", [], function() {
 	return {
 		entitySchemaName: "DsnMovmType",
