@@ -1,3 +1,4 @@
+//ИСПРАВИТЬ ОТСТУПЫ
 define("DsnPokemons1Page", ["ConfigurationConstants","css!DsnCSSButton"], function (ConfigurationConstants) {
     return {
       entitySchemaName: "DsnPokemons",
