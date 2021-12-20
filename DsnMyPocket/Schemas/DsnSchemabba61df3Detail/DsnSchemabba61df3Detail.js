@@ -1,3 +1,4 @@
+// Переименовать деталь на читаемое название
 define("DsnSchemabba61df3Detail", ["ConfigurationGrid", "ConfigurationGridGenerator",
 	"ConfigurationGridUtilitiesV2"], function() {
 	return {
