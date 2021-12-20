@@ -90,7 +90,7 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
                     }
                     else
                     {
-					// Использовать локализуемую строку вместо текста
+						// Использовать локализуемую строку вместо текста
                         return "Ïîêåìîíà ñ òàêèì èìåíåì íåò";
                     }
                 }
