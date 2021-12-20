@@ -3,6 +3,8 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Тип движения" />
+			<Item Name="Columns.DsnLookupPokemon.Caption" Value="Покемоны" />
+			<Item Name="Columns.DsnLookupTypeMovment.Caption" Value="Типы движений" />
 			<Item Name="EventsProcessSchema.Caption" Value="Бизнес-процесс" />
 		</Items>
 	</Group>

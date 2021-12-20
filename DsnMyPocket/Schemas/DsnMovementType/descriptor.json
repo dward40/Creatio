@@ -2,7 +2,7 @@
   "Descriptor": {
     "UId": "76ed8995-0498-44be-86e7-67dd37340af4",
     "Name": "DsnMovementType",
-    "ModifiedOnUtc": "\/Date(1638954547000)\/",
+    "ModifiedOnUtc": "\/Date(1639049067000)\/",
     "Parent": {
       "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
       "Name": "BaseLookup"

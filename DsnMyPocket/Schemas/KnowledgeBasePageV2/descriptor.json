@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "2519a26a-3995-4fcb-a96f-44c7f42b77b1",
+    "Name": "KnowledgeBasePageV2",
+    "ModifiedOnUtc": "\/Date(1639727703000)\/",
+    "Parent": {
+      "UId": "9dbd0611-fa52-4a90-9542-e5fd997b4afd",
+      "Name": "KnowledgeBasePageV2"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Knowledge base edit page"
+  }
+}
