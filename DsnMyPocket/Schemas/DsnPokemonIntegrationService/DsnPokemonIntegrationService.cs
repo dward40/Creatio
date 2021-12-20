@@ -22,6 +22,13 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
     [ServiceContract]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
 
+	// Добавить комментарии к методам и свойствамв формате:
+	/// <summary>
+	/// Краткое описание
+	/// </summary>
+	/// <param name="Название параметра1">Описание параметра1</param>
+	/// <param name="Название параметра2">Описание параметра2</param>
+	/// <returns>Описание возвращаемого значения</returns>
     public class DsnPokemonIntegrationService : BaseService
     {
         string uri;
