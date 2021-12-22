@@ -1,7 +1,13 @@
 define("ContactPageV2", ["ServiceHelper", "ProcessModuleUtilities"], function (ServiceHelper, ProcessModuleUtilities) {
   return {
     entitySchemaName: "Contact",
-    attributes: {},
+    attributes: {
+		"isAdmin":
+		{
+			dataValueType: Terrasoft.DataValueType.Bool,
+			value: false,
+		}
+	},
     modules: /**SCHEMA_MODULES*/ {} /**SCHEMA_MODULES*/,
     details: /**SCHEMA_DETAILS*/ {
       DsnPokemonDetail: {
@@ -21,7 +27,30 @@ define("ContactPageV2", ["ServiceHelper", "ProcessModuleUtilities"], function (S
       },
     },
     methods: {
-     
+      	
+	  init: function () {
+        this.callParent(arguments);
+        this.checkAdminRole();
+      },
+		
+	  checkAdminRole: function () {
+		var currentUser = Terrasoft.SysValue.CURRENT_USER.value;
+		var serviceData = {
+					currentUser: currentUser
+				};
+        var config = {
+          serviceName: "DsnCheckRole",
+          methodName: "CheckAdmRoleUser",
+          timeout: 100000,
+          callback: function (response) {
+			this.set("isAdmin",response.CheckAdmRoleUserResult );
+			  
+		  },
+          data: serviceData,
+          scope: this,
+        };
+        ServiceHelper.callService(config);
+      },
       subscribeSandboxEvents: function () {
         this.callParent(arguments);
 
@@ -38,6 +67,13 @@ define("ContactPageV2", ["ServiceHelper", "ProcessModuleUtilities"], function (S
     },
     dataModels: /**SCHEMA_DATA_MODELS*/ {} /**SCHEMA_DATA_MODELS*/,
     diff: /**SCHEMA_DIFF*/ [
+	  { 
+		operation: "merge",
+        name: "Email",
+        values: {
+          visible: {"bindTo": "isAdmin"},
+        },
+      },		   
       {
         operation: "insert",
         name: "DsnPokemonDetail",

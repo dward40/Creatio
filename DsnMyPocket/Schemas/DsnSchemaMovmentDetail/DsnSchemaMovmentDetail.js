@@ -1,4 +1,4 @@
-define("DsnSchemabba61df3Detail", ["ConfigurationGrid", "ConfigurationGridGenerator",
+define("DsnSchemaMovmentDetail", ["ConfigurationGrid", "ConfigurationGridGenerator",
 	"ConfigurationGridUtilitiesV2"], function() {
 	return {
 		entitySchemaName: "DsnMovmType",

@@ -1,4 +1,4 @@
-define("DsnSchema6f56b322Page", [], function() {
+define("DsnMovmentPage", [], function() {
 	return {
 		entitySchemaName: "DsnMovmType",
 		attributes: {},

@@ -5,6 +5,12 @@
 			<Item Name="Caption" Value="Схема раздела: &quot;Покемоны&quot;" />
 			<Item Name="LocalizableStrings.Caption.Value" Value="Покемоны" />
 			<Item Name="LocalizableStrings.DsnAddPokemonApi.Value" Value="Добавить покемона из API" />
+			<Item Name="LocalizableStrings.DsnDataRequestError.Value" Value="Ошибка запроса данных" />
+			<Item Name="LocalizableStrings.DsnEnterCorrectName.Value" Value="Введите корректное имя покемона" />
+			<Item Name="LocalizableStrings.DsnEnterNamePokemon.Value" Value="Введите имя:" />
+			<Item Name="LocalizableStrings.DsnPokemonAlreadyHas.Value" Value="Такой покемон уже есть" />
+			<Item Name="LocalizableStrings.DsnPokemonDoenstExist.Value" Value="Такого покемона не существует" />
+			<Item Name="LocalizableStrings.DsnPokemonName.Value" Value="Имя покемона" />
 			<Item Name="LocalizableStrings.DsnResultValue.Value" Value="Посчитать покемонов" />
 		</Items>
 	</Group>

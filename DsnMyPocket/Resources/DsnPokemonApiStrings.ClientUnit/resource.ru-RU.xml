@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="DsnPokemonApiStrings" />
+			<Item Name="LocalizableStrings.DsnEnterCorrectName.Value" Value="Введите корректное имя покемона" />
+			<Item Name="LocalizableStrings.DsnPokemonAlreadyHas.Value" Value="Такой покемон уже есть" />
+			<Item Name="LocalizableStrings.DsnPokemonDoenstExist.Value" Value="Такого покемона не существует" />
+		</Items>
+	</Group>
+</Resources>
