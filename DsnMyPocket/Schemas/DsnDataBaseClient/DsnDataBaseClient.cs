@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using Terrasoft.Core;
 using System.Net;
 using Terrasoft.Core.DB;
@@ -10,21 +10,22 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
     
     public class DsnDataBaseClient
     {
+
         UserConnection UserConnection;
         private ImageAPI _imageApi;
         string Type = "d7e5ab09-b2ed-45f5-8966-b69fad0c0b87";
 
-        //Конструктор
+        //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
         public DsnDataBaseClient(UserConnection userConnection)
         {
             UserConnection = userConnection;
             _imageApi = new ImageAPI(userConnection);
         }
         /// <summary>
-        /// Делает поиск покемона в БД по имени
+        /// Р”РµР»Р°РµС‚ РїРѕРёСЃРє РїРѕРєРµРјРѕРЅР° РІ Р‘Р” РїРѕ РёРјРµРЅРё
         /// </summary>
-        /// <param name="name">Имя покемона</param>
-        /// <returns>Возвращает id покемона</returns>
+        /// <param name="name">РРјСЏ РїРѕРєРµРјРѕРЅР°</param>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ id РїРѕРєРµРјРѕРЅР°</returns>
         public Guid GetPokemonId(string name)
         {
 
@@ -35,22 +36,22 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
             return select.ExecuteScalar<Guid>();
         }
         /// <summary>
-        /// Делает поиск покемона в БД по имени
+        /// Р”РµР»Р°РµС‚ РїРѕРёСЃРє РїРѕРєРµРјРѕРЅР° РІ Р‘Р” РїРѕ РёРјРµРЅРё
         /// </summary>
         /// 
-        /// <returns>Возвращает ссылку на API сервиса покемонов</returns>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСЃС‹Р»РєСѓ РЅР° API СЃРµСЂРІРёСЃР° РїРѕРєРµРјРѕРЅРѕРІ</returns>
         public string getUriApi()
         {
             var uri = (string)Terrasoft.Core.Configuration.SysSettings.GetValue(UserConnection, "DsnUriPokemon");
             return uri;
         }
         /// <summary>
-        /// Делает поиск покемона в БД по имени
+        /// Р”РµР»Р°РµС‚ РїРѕРёСЃРє РїРѕРєРµРјРѕРЅР° РІ Р‘Р” РїРѕ РёРјРµРЅРё
         /// </summary>
-        /// <param name="name">Имя покемона</param>
-        /// <param name="height">высота покемона</param>
-        /// <param name="weight">вес покемона</param>
-        /// <param name="imgPokemon">id картинки в таблице sysImage</param>
+        /// <param name="name">РРјСЏ РїРѕРєРµРјРѕРЅР°</param>
+        /// <param name="height">РІС‹СЃРѕС‚Р° РїРѕРєРµРјРѕРЅР°</param>
+        /// <param name="weight">РІРµСЃ РїРѕРєРµРјРѕРЅР°</param>
+        /// <param name="imgPokemon">id РєР°СЂС‚РёРЅРєРё РІ С‚Р°Р±Р»РёС†Рµ sysImage</param>
         public void CreatePokemon(string name, int height, int weight, Guid imgPokemon)
         {
             var pokemonSchema = UserConnection.EntitySchemaManager.GetInstanceByName("DsnPokemons");
@@ -65,10 +66,10 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
             pokemon.Save();
         }
         /// <summary>
-        /// Получает изображение по ссылке 
+        /// РџРѕР»СѓС‡Р°РµС‚ РёР·РѕР±СЂР°Р¶РµРЅРёРµ РїРѕ СЃСЃС‹Р»РєРµ 
         /// </summary>
-        /// <param name="url">ссылка на картинку</param>
-        /// <returns>Возвращает поток данных в котором содержится картинка с логотипом покемона</returns>
+        /// <param name="url">СЃСЃС‹Р»РєР° РЅР° РєР°СЂС‚РёРЅРєСѓ</param>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ РїРѕС‚РѕРє РґР°РЅРЅС‹С… РІ РєРѕС‚РѕСЂРѕРј СЃРѕРґРµСЂР¶РёС‚СЃСЏ РєР°СЂС‚РёРЅРєР° СЃ Р»РѕРіРѕС‚РёРїРѕРј РїРѕРєРµРјРѕРЅР°</returns>
         public MemoryStream GetProfilePhotoIdByUrl(string url)
         {
             MemoryStream imageMemoryStream;
@@ -81,11 +82,11 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
             return imageMemoryStream;
         }
         /// <summary>
-        /// Сохраняет в бд(sysImage) картинку
+        /// РЎРѕС…СЂР°РЅСЏРµС‚ РІ Р±Рґ(sysImage) РєР°СЂС‚РёРЅРєСѓ
         /// </summary>
-        /// <param name="imageMemoryStream">Полученный поток изображения</param>
-        /// <param name ="imageName">Наименование картинки в БД</param>
-        /// <returns>Возвращает guid сохраненной картинки </returns>
+        /// <param name="imageMemoryStream">РџРѕР»СѓС‡РµРЅРЅС‹Р№ РїРѕС‚РѕРє РёР·РѕР±СЂР°Р¶РµРЅРёСЏ</param>
+        /// <param name ="imageName">РќР°РёРјРµРЅРѕРІР°РЅРёРµ РєР°СЂС‚РёРЅРєРё РІ Р‘Р”</param>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ guid СЃРѕС…СЂР°РЅРµРЅРЅРѕР№ РєР°СЂС‚РёРЅРєРё </returns>
         public Guid SaveImage(Stream imageMemoryStream, string imageName)
         {
             var imageId = Guid.NewGuid();
@@ -93,11 +94,11 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
             return imageId;
         }
         /// <summary>
-        /// Сохраняет в бд(sysImage) картинку
+        /// РЎРѕС…СЂР°РЅСЏРµС‚ РІ Р±Рґ(sysImage) РєР°СЂС‚РёРЅРєСѓ
         /// </summary>
-        /// <param  name="nameShema">Имя схемы данных</param>
-        /// <param  name="namestring">Наименование локализованной строки</param>
-        /// <returns>Возвращает локазизованную строку </returns>
+        /// <param  name="nameShema">РРјСЏ СЃС…РµРјС‹ РґР°РЅРЅС‹С…</param>
+        /// <param  name="namestring">РќР°РёРјРµРЅРѕРІР°РЅРёРµ Р»РѕРєР°Р»РёР·РѕРІР°РЅРЅРѕР№ СЃС‚СЂРѕРєРё</param>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ Р»РѕРєР°Р·РёР·РѕРІР°РЅРЅСѓСЋ СЃС‚СЂРѕРєСѓ </returns>
         public string GetLocallizableString(string nameShema, string namestring) {
 
             string title = UserConnection.GetLocalizableString(nameShema, namestring);

@@ -1,4 +1,4 @@
-namespace Terrasoft.Configuration.DsnPokemonIntegrationService
+п»їnamespace Terrasoft.Configuration.DsnPokemonIntegrationService
 {
     using System;
     using Terrasoft.Core.ImageAPI;
@@ -25,14 +25,14 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
     public class DsnPokemonIntegrationHelper
 
     {
-       //Блок переменных//
+       //Р‘Р»РѕРє РїРµСЂРµРјРµРЅРЅС‹С…//
 
        private readonly DsnDataBaseClient _dbClient;
        private readonly DsnPokemonApiClient _apiClient;
        public ILog log;
 
 
-        //Конструктор
+        //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
         public DsnPokemonIntegrationHelper (UserConnection userConnection)
         {
 
@@ -43,11 +43,11 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
 
 
         /// <summary>
-        /// Вспомогательная фукция, вызывает остальные методы для записи покемона
+        /// Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅР°СЏ С„СѓРєС†РёСЏ, РІС‹Р·С‹РІР°РµС‚ РѕСЃС‚Р°Р»СЊРЅС‹Рµ РјРµС‚РѕРґС‹ РґР»СЏ Р·Р°РїРёСЃРё РїРѕРєРµРјРѕРЅР°
         /// </summary>
-        /// <param name="name">Имя покемона</param>
+        /// <param name="name">РРјСЏ РїРѕРєРµРјРѕРЅР°</param>
 
-        /// <returns>Возвращает результат выполнения о создании покемона</returns>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ СЂРµР·СѓР»СЊС‚Р°С‚ РІС‹РїРѕР»РЅРµРЅРёСЏ Рѕ СЃРѕР·РґР°РЅРёРё РїРѕРєРµРјРѕРЅР°</returns>
         public string HelperFunc(string name)
         {
 
@@ -77,7 +77,7 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
             }
             catch (Exception)
             {
-                return "Ошибка соединения с API";
+                return "РћС€РёР±РєР° СЃРѕРµРґРёРЅРµРЅРёСЏ СЃ API";
                 log.Error(result.StatusCode);
                 throw;
             }
@@ -94,13 +94,13 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
                 }
                 catch (Exception)
                 {
-                    log.Error("Не удалось скачать, изображение недоступно");
+                    log.Error("РќРµ СѓРґР°Р»РѕСЃСЊ СЃРєР°С‡Р°С‚СЊ, РёР·РѕР±СЂР°Р¶РµРЅРёРµ РЅРµРґРѕСЃС‚СѓРїРЅРѕ");
                     throw;
                 }
 
                 var imgID = _dbClient.SaveImage(imgStream, name);
                 _dbClient.CreatePokemon(name, ability.height, ability.weight, imgID);
-                return ("Покемон создан " + name);
+                return ("РџРѕРєРµРјРѕРЅ СЃРѕР·РґР°РЅ " + name);
             }
 
             return _dbClient.GetLocallizableString("DsnPokemonsSection", "DsnPokemonDoenstExist");

@@ -1,4 +1,4 @@
-namespace Terrasoft.Configuration.DsnPokemonIntegrationService
+п»їnamespace Terrasoft.Configuration.DsnPokemonIntegrationService
 {
     using System;
     using Terrasoft.Core.ImageAPI;
@@ -22,15 +22,15 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
 
 
 
-
+    
     public class DsnPokemonApiClient
     {
         /// <summary>
-        /// Отправляет запрос по api покемонов
+        /// РћС‚РїСЂР°РІР»СЏРµС‚ Р·Р°РїСЂРѕСЃ РїРѕ api РїРѕРєРµРјРѕРЅРѕРІ
         /// </summary>
-        /// <param name="uri">ссылка для запроса к api</param>
-        /// <param name="name">Имя покемона</param>
-        /// <returns>Возвращает результат запроса к API</returns>
+        /// <param name="uri">СЃСЃС‹Р»РєР° РґР»СЏ Р·Р°РїСЂРѕСЃР° Рє api</param>
+        /// <param name="name">РРјСЏ РїРѕРєРµРјРѕРЅР°</param>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ СЂРµР·СѓР»СЊС‚Р°С‚ Р·Р°РїСЂРѕСЃР° Рє API</returns>
         public HttpResponseMessage GetResponse(string uri, string name)
         {
             HttpClient httpClient = new HttpClient();

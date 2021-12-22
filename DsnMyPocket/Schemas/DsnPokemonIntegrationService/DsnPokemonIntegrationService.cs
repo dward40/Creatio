@@ -1,4 +1,4 @@
-namespace Terrasoft.Configuration.DsnPokemonIntegrationService
+п»їnamespace Terrasoft.Configuration.DsnPokemonIntegrationService
 {
     using System;
     using Terrasoft.Core.ImageAPI;
@@ -31,11 +31,11 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
                 ResponseFormat = WebMessageFormat.Json)]
 
         /// <summary>
-        /// Начальная точка входа в процесс. Вызывается из секции DsnPokemonsSection.
-        /// Кнопка "Добавить покемона по API"
+        /// РќР°С‡Р°Р»СЊРЅР°СЏ С‚РѕС‡РєР° РІС…РѕРґР° РІ РїСЂРѕС†РµСЃСЃ. Р’С‹Р·С‹РІР°РµС‚СЃСЏ РёР· СЃРµРєС†РёРё DsnPokemonsSection.
+        /// РљРЅРѕРїРєР° "Р”РѕР±Р°РІРёС‚СЊ РїРѕРєРµРјРѕРЅР° РїРѕ API"
         /// </summary>
-        /// <param name="name">имя покемона</param>
-        /// <returns>Возвращает результат выполнения операции.</returns>
+        /// <param name="name">РёРјСЏ РїРѕРєРµРјРѕРЅР°</param>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ СЂРµР·СѓР»СЊС‚Р°С‚ РІС‹РїРѕР»РЅРµРЅРёСЏ РѕРїРµСЂР°С†РёРё.</returns>
         public string AddPokemonApi(string name)
         {
             DsnPokemonIntegrationHelper helper = new DsnPokemonIntegrationHelper(UserConnection);
