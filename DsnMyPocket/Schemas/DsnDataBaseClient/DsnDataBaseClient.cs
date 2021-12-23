@@ -13,6 +13,7 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
 
         UserConnection UserConnection;
         private ImageAPI _imageApi;
+        // перенести в константы
         string Type = "d7e5ab09-b2ed-45f5-8966-b69fad0c0b87";
 
         //Конструктор
@@ -35,6 +36,7 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
                 .Where("DsnName").IsEqual(Column.Parameter(name)) as Select;
             return select.ExecuteScalar<Guid>();
         }
+        /*Между веми методами должна быть пустая строка*/
         /// <summary>
         /// Делает поиск покемона в БД по имени
         /// </summary>
@@ -72,6 +74,10 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
         /// <returns>Возвращает поток данных в котором содержится картинка с логотипом покемона</returns>
         public MemoryStream GetProfilePhotoIdByUrl(string url)
         {
+            // Здесь очень грубая ошибка с использованием нескольких незакрытых потоков.
+            // Поток обязательно нужно закрывать после использования
+            // Вкратце это делается для освобождения ресурсов, используемых им
+            // Используй using или Dispose()
             MemoryStream imageMemoryStream;
             WebRequest imageRequest = WebRequest.Create(url);
             WebResponse webResponse = imageRequest.GetResponse();
@@ -93,6 +99,10 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
             _imageApi.Save(imageMemoryStream, "image/png", imageName, imageId);
             return imageId;
         }
+        /*тут комментарий не от того метода
+           В принципе, метод GetLocalizableString здесь лишний, можно сразу использовать 
+           UserConnection.GetLocalizableString() где требуется
+        */
         /// <summary>
         /// Сохраняет в бд(sysImage) картинку
         /// </summary>
