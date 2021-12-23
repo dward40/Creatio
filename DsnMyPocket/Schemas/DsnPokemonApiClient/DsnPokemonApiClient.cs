@@ -1,28 +1,23 @@
-﻿namespace Terrasoft.Configuration.DsnPokemonIntegrationService
-{
-    using System;
-    using Terrasoft.Core.ImageAPI;
-    using System.ServiceModel;
-    using System.ServiceModel.Web;
-    using System.ServiceModel.Activation;
-    using Terrasoft.Core;
-    using Terrasoft.Web.Common;
-    using Terrasoft.Core.Entities;
-    using Newtonsoft.Json;
-    using System.Net;
-    using System.Net.Http;
-    using System.Net.Http.Headers;
-    using System.Threading.Tasks;
-    using System.Collections.Generic;
-    using Terrasoft.Core.Factories;
-    using Terrasoft.Core.DB;
-    using System.Data;
-    using global::Common.Logging;
-
-
-
-
-    
+﻿using System;
+using Terrasoft.Core.ImageAPI;
+using System.ServiceModel;
+using System.ServiceModel.Web;
+using System.ServiceModel.Activation;
+using Terrasoft.Core;
+using Terrasoft.Web.Common;
+using Terrasoft.Core.Entities;
+using Newtonsoft.Json;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Terrasoft.Core.Factories;
+using Terrasoft.Core.DB;
+using System.Data;
+using global::Common.Logging;
+namespace Terrasoft.Configuration.DsnPokemonIntegrationService
+{   
     public class DsnPokemonApiClient
     {
         /// <summary>

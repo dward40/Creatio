@@ -7,13 +7,13 @@ using Terrasoft.Core.ImageAPI;
 
 namespace Terrasoft.Configuration.DsnPokemonIntegrationService
 {
-    
+
     public class DsnDataBaseClient
     {
 
         UserConnection UserConnection;
         private ImageAPI _imageApi;
-        string Type = "d7e5ab09-b2ed-45f5-8966-b69fad0c0b87";
+
 
         //Конструктор
         public DsnDataBaseClient(UserConnection userConnection)
@@ -21,6 +21,7 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
             UserConnection = userConnection;
             _imageApi = new ImageAPI(userConnection);
         }
+
         /// <summary>
         /// Делает поиск покемона в БД по имени
         /// </summary>
@@ -35,6 +36,7 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
                 .Where("DsnName").IsEqual(Column.Parameter(name)) as Select;
             return select.ExecuteScalar<Guid>();
         }
+
         /// <summary>
         /// Делает поиск покемона в БД по имени
         /// </summary>
@@ -45,14 +47,15 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
             var uri = (string)Terrasoft.Core.Configuration.SysSettings.GetValue(UserConnection, "DsnUriPokemon");
             return uri;
         }
+
         /// <summary>
-        /// Делает поиск покемона в БД по имени
+        /// Поиск покемона в БД по имени
         /// </summary>
         /// <param name="name">Имя покемона</param>
         /// <param name="height">высота покемона</param>
         /// <param name="weight">вес покемона</param>
         /// <param name="imgPokemon">id картинки в таблице sysImage</param>
-        public void CreatePokemon(string name, int height, int weight, Guid imgPokemon)
+        public void CreatePokemon(string name, int height, int weight, Guid Type, Guid imgPokemon)
         {
             var pokemonSchema = UserConnection.EntitySchemaManager.GetInstanceByName("DsnPokemons");
             var pokemon = pokemonSchema.CreateEntity(UserConnection);
@@ -65,45 +68,29 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
             pokemon.SetColumnValue("DsnPokemonPhotoId", imgPokemon);
             pokemon.Save();
         }
-        /// <summary>
-        /// Получает изображение по ссылке 
-        /// </summary>
-        /// <param name="url">ссылка на картинку</param>
-        /// <returns>Возвращает поток данных в котором содержится картинка с логотипом покемона</returns>
-        public MemoryStream GetProfilePhotoIdByUrl(string url)
-        {
-            MemoryStream imageMemoryStream;
-            WebRequest imageRequest = WebRequest.Create(url);
-            WebResponse webResponse = imageRequest.GetResponse();
-            Stream webResponseStream = webResponse.GetResponseStream();
-            imageMemoryStream = new MemoryStream();
-            webResponseStream.CopyTo(imageMemoryStream);
 
-            return imageMemoryStream;
-        }
         /// <summary>
-        /// Сохраняет в бд(sysImage) картинку
+        /// Получает изображение по ссылке и сохраняет в базу
         /// </summary>
-        /// <param name="imageMemoryStream">Полученный поток изображения</param>
-        /// <param name ="imageName">Наименование картинки в БД</param>
-        /// <returns>Возвращает guid сохраненной картинки </returns>
-        public Guid SaveImage(Stream imageMemoryStream, string imageName)
+        /// <param name="url">Ссылка на картинку</param>
+        /// <param name="imageName">Наименование картинки</param>
+        /// <returns>Возвращает guid картинки, которая была получена</returns>
+        public Guid GetProfilePhotoIdByUrl(string url, string imageName)
         {
             var imageId = Guid.NewGuid();
-            _imageApi.Save(imageMemoryStream, "image/png", imageName, imageId);
+            WebRequest imageRequest = WebRequest.Create(url);
+            using (WebResponse webResponse = imageRequest.GetResponse())
+            {
+                using (Stream webResponseStream = webResponse.GetResponseStream())
+                {
+                    using (var imageMemoryStream = new MemoryStream())
+                    {
+                        webResponseStream.CopyTo(imageMemoryStream);
+                        _imageApi.Save(imageMemoryStream, "image/png", imageName, imageId);
+                    }
+                }
+            }
             return imageId;
-        }
-        /// <summary>
-        /// Сохраняет в бд(sysImage) картинку
-        /// </summary>
-        /// <param  name="nameShema">Имя схемы данных</param>
-        /// <param  name="namestring">Наименование локализованной строки</param>
-        /// <returns>Возвращает локазизованную строку </returns>
-        public string GetLocallizableString(string nameShema, string namestring) {
-
-            string title = UserConnection.GetLocalizableString(nameShema, namestring);
-
-            return title;
         }
 
     }
