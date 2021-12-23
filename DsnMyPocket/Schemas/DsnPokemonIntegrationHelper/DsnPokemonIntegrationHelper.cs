@@ -41,7 +41,8 @@
 
         }
 
-
+        //Метод нужно переименовать в соответствии с правилами, которые я тебе кидал.
+        
         /// <summary>
         /// Вспомогательная фукция, вызывает остальные методы для записи покемона
         /// </summary>
@@ -63,6 +64,14 @@
                 return _dbClient.GetLocallizableString("DsnPokemonsSection", "DsnEnterCorrectName");
             };
 
+            //Для лучшей читаемости лучше вынести метод GetPokemonId в отдельную строку и проверять в условии результат его выполнения
+            /*
+                Guid pokemonId = _dbClient.GetPokemonId(name);
+                if(!pokemonId.IsEmpty())
+                {
+                
+                }
+            */
             if (_dbClient.GetPokemonId(name) != Guid.Empty)
             {
                 return _dbClient.GetLocallizableString("DsnPokemonsSection", "DsnPokemonAlreadyHas");
@@ -75,8 +84,19 @@
                 result = _apiClient.GetResponse(uri, name);
                 log.Info(uri + name);
             }
+            //Я бы написал блок catch так:
+            /*
+                catch(Exception ex)
+                {
+                    var result = $"Ошибка получения покемона. {ex}";
+                    log.Error(result);
+                    return result;
+                }
+            
+            */
             catch (Exception)
             {
+                // Код после return не сработает
                 return "Ошибка соединения с API";
                 log.Error(result.StatusCode);
                 throw;
@@ -97,7 +117,8 @@
                     log.Error("Не удалось скачать, изображение недоступно");
                     throw;
                 }
-
+                // Логичнее сохранять картинку после сохранения покемона, потому что если в процессе сохранения покемона произойдет ошибка
+                // То мы получим лишнюю картинку в SysImage 
                 var imgID = _dbClient.SaveImage(imgStream, name);
                 _dbClient.CreatePokemon(name, ability.height, ability.weight, imgID);
                 return ("Покемон создан " + name);
