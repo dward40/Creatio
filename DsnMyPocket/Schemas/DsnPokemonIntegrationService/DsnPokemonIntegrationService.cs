@@ -26,6 +26,10 @@
     {
        
 
+
+
+        //Комментарии с описанием метода должны быть выше его атрибутов.
+        // Лучше переименовать метод в GetPokemon или AddPokemon
         [OperationContract]
         [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped,
                 ResponseFormat = WebMessageFormat.Json)]
