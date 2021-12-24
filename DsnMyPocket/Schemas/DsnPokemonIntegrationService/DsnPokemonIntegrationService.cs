@@ -26,11 +26,7 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
 
     public class DsnPokemonIntegrationService : BaseService
     {
-       
-
-        [OperationContract]
-        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped,
-                ResponseFormat = WebMessageFormat.Json)]
+        ILog log = LogManager.GetLogger("API Pokemon.co");
 
         /// <summary>
         /// Начальная точка входа в процесс. Вызывается из секции DsnPokemonsSection.
@@ -38,14 +34,28 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
         /// </summary>
         /// <param name="name">имя покемона</param>
         /// <returns>Возвращает результат выполнения операции.</returns>
-        public string AddPokemonApi(string name)
+        /// 
+        [OperationContract]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped,
+                ResponseFormat = WebMessageFormat.Json)]
+
+        public string AddPokemon(string name)
         {
             DsnPokemonIntegrationHelper helper = new DsnPokemonIntegrationHelper(UserConnection);
+            try
+            {
+                var result = helper.GetPokemon(name);
 
-           var result = helper.HelperFunc(name);
+                return result;
 
-            return result;
-
+            }
+            catch (Exception ex)
+            {
+                log.Error("Ошибка при создании покемона Error: " +ex);
+                return "Ошибка при создании покемона " + ex.Message;
+                throw;
+            }
+           
         }
 
 

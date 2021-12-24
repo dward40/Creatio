@@ -55,7 +55,7 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
         /// <param name="height">высота покемона</param>
         /// <param name="weight">вес покемона</param>
         /// <param name="imgPokemon">id картинки в таблице sysImage</param>
-        public void CreatePokemon(string name, int height, int weight, Guid Type, Guid imgPokemon)
+        public void CreatePokemon(string name, int height, int weight, Guid Type, string imgUrl)
         {
             var pokemonSchema = UserConnection.EntitySchemaManager.GetInstanceByName("DsnPokemons");
             var pokemon = pokemonSchema.CreateEntity(UserConnection);
@@ -65,8 +65,12 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
             pokemon.SetColumnValue("DsnWeight", weight);
             pokemon.SetColumnValue("DsnHeight", height);
             pokemon.SetColumnValue("DsnLookupTypeId", Type);
-            pokemon.SetColumnValue("DsnPokemonPhotoId", imgPokemon);
             pokemon.Save();
+            Guid imgGuid = GetProfilePhotoIdByUrl(imgUrl, name);
+            pokemon.SetColumnValue("DsnPokemonPhotoId", imgGuid);
+            pokemon.Save();
+
+
         }
 
         /// <summary>

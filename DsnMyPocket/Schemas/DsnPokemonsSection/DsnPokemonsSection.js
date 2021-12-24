@@ -105,10 +105,10 @@ function (RightUtilities, ServiceHelper, ProcessModuleUtilities, resources) {
               };
               var config = {
                 serviceName: "DsnPokemonIntegrationService",
-                methodName: "addPokemonApi",
+                methodName: "AddPokemon",
                 timeout: 100000,
                 callback: function (response) {
-                  this.showInformationDialog(response.AddPokemonApiResult)
+                  this.showInformationDialog(response.AddPokemonResult)
 				  this.reloadGridData();
                 },
                 data: serviceData,

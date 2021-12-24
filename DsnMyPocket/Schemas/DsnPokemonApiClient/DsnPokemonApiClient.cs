@@ -20,6 +20,9 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
 {   
     public class DsnPokemonApiClient
     {
+        ILog log = LogManager.GetLogger("API Pokemon.co");
+
+
         /// <summary>
         /// Отправляет запрос по api покемонов
         /// </summary>
@@ -28,13 +31,18 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
         /// <returns>Возвращает результат запроса к API</returns>
         public HttpResponseMessage GetResponse(string uri, string name)
         {
-            HttpClient httpClient = new HttpClient();
-            var result = httpClient.GetAsync(uri + name).Result;
-            return result;
+
+                HttpClient httpClient = new HttpClient();
+                var result = httpClient.GetAsync(uri + name).Result;
+                log.Debug(uri + name);
+
+                return result;
+            }
+
 
         }
         
 
 
     }   
-}
+

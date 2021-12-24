@@ -17,6 +17,8 @@ using Terrasoft.Core.DB;
 using System.Data;
 using global::Common.Logging;
 using System.IO;
+using System.Text.RegularExpressions;
+
 namespace Terrasoft.Configuration.DsnPokemonIntegrationService
 {
     
@@ -31,7 +33,7 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
        private readonly DsnDataBaseClient _dbClient;
        private readonly DsnPokemonApiClient _apiClient;
        public ILog log;
-       private readonly Guid type = DsnPokemonType.Bug;
+       
 
 
         //Конструктор
@@ -49,7 +51,7 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
         /// </summary>
         /// <param name="name">Имя покемона</param>
         /// <returns>Возвращает результат выполнения о создании покемона</returns>
-        public string HelperFunc(string name)
+        public string GetPokemon(string name)
         {
 
             HttpResponseMessage result;
@@ -58,54 +60,38 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
             log = LogManager.GetLogger("API Pokemon.co");
 
 
-            if (String.IsNullOrEmpty(name) || (name.Contains("/") == true) || (name.Contains("\\") == true))
+            if (!Regex.IsMatch(name, @"^[a-zA-Z]+$"))
             {
+                //DsnEnterCorrectName -  Введите корректное имя покемона
                 return userConnectionHelper.GetLocalizableString("DsnPokemonsSection", "DsnEnterCorrectName");
             };
 
             if (_dbClient.GetPokemonId(name) != Guid.Empty)
             {
+                //DsnPokemonAlreadyHas -  такой покемон у нас уже есть
                 return userConnectionHelper.GetLocalizableString("DsnPokemonsSection", "DsnPokemonAlreadyHas");
             };
 
-            var uri = _dbClient.getUriApi();
+              var uri = _dbClient.getUriApi();
+              result = _apiClient.GetResponse(uri, name);
 
-            try
-            {
-                result = _apiClient.GetResponse(uri, name);
-                log.Info(uri + name);
-            }
-            catch (Exception)
-            {
-                return "Ошибка соединения с API";
-                log.Error(result.StatusCode);
-                throw;
-            }
-
-            if (result.IsSuccessStatusCode)
+            if (result.StatusCode.ToString() == "OK")
             {
                 var body = result.Content;
-                       string responseString = body.ReadAsStringAsync().Result;
-                       ability = JsonConvert.DeserializeObject<DsnPokemonDTO>(responseString);
-                       
-                try
-                {
-                    var imgUrl = ability.sprites.front_default;
-                    imgGuid = _dbClient.GetProfilePhotoIdByUrl(imgUrl, name);
-                }
-                catch (Exception)
-                {
-                    log.Error("Не удалось скачать, изображение недоступно");
-                    throw;
-                }
+                string responseString = body.ReadAsStringAsync().Result;
+                ability = JsonConvert.DeserializeObject<DsnPokemonDTO>(responseString);
+                var imgUrl = ability.sprites.front_default;
+                _dbClient.CreatePokemon(name, ability.height, ability.weight, DsnPokemonType.Bug, imgUrl);
 
-                _dbClient.CreatePokemon(name, ability.height, ability.weight, type, imgGuid);
                 return ("Покемон создан " + name);
             }
+            else
+            {
+                log.Error("Ошибка обращения к URL " + new Exception());
+                return result.StatusCode.ToString();
+            }
 
-            return userConnectionHelper.GetLocalizableString("DsnPokemonsSection", "DsnPokemonDoenstExist");
         }
-        
 
 
     }

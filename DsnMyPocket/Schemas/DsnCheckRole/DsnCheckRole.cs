@@ -1,4 +1,4 @@
-namespace Terrasoft.Configuration.DsnCheckRole
+namespace Terrasoft.Configuration.DsnPokemonIntegrationService
 {
     using System;
     using Terrasoft.Core.ImageAPI;
@@ -33,18 +33,15 @@ ResponseFormat = WebMessageFormat.Json)]
         public bool CheckAdmRoleUser(string currentUser)
         {
 
-            var sysAdmin = "83A43EBC-F36B-1410-298D-001E8C82BCAD";
-            var result = "";
-
             Select select = (Select)new Select(UserConnection)
                 .Column("Id")
                 .From("SysUserInRole")
                 .Where("SysUserId").IsEqual(Column.Parameter(currentUser))
-                .And("SysRoleId").IsEqual(Column.Parameter(sysAdmin)) as Select;
+                .And("SysRoleId").IsEqual(Column.Parameter(DsnUserRoles.admin)) as Select;
 
 
-            result = select.ExecuteScalar<Guid>().ToString();
-            if (result == "00000000-0000-0000-0000-000000000000")
+            Guid result = select.ExecuteScalar<Guid>();
+            if (result == Guid.Empty)
             {
                 return false;
             }
