@@ -115,7 +115,7 @@ namespace Terrasoft.Configuration.DsnYandexCovideService
                     { "icon", weatherIconName},
                     { "temperature",temperature.ToString()},
                     { "windSpeed",windSpeed.ToString()},
-                    { "humidity",moisture.ToString()},
+                    { "moisture",moisture.ToString()},
 
 
 
