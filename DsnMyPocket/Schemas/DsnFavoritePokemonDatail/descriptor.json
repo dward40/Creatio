@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "ecd155b4-2b56-489a-8234-d504e3dfd899",
+    "Name": "DsnFavoritePokemonDatail",
+    "ModifiedOnUtc": "\/Date(1639042825000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Схема детали: \"Любимые покемоны контакта\""
+  }
+}

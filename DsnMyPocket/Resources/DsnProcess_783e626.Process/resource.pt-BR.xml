@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="pt-BR">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Id.Caption" Value="Identidade" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Name.Caption" Value="Nome completo" />
+		</Items>
+	</Group>
+</Resources>

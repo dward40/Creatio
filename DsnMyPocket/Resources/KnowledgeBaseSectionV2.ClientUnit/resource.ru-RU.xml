@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Схема раздела: &quot;База знаний&quot;" />
+			<Item Name="LocalizableStrings.Caption.Value" Value="База знаний" />
+			<Item Name="LocalizableStrings.DuplicatesActionCaptionPattern.Value" Value="Перейти к дублям раздела '{0}'" />
+			<Item Name="LocalizableStrings.GenerateReportWithoutFiltersConfirmationMessage.Value" Value="Отчет будет сформирован по всем записям раздела, без учета фильтров. Продолжить?" />
+			<Item Name="LocalizableStrings.SubscribeCaption.Value" Value="Подписаться на обновление ленты" />
+			<Item Name="LocalizableStrings.UnsubscribeCaption.Value" Value="Отписаться от обновлений ленты" />
+		</Items>
+	</Group>
+</Resources>
