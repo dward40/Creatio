@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Схема раздела: &quot;Страна&quot;" />
+			<Item Name="LocalizableStrings.Caption.Value" Value="Страна" />
+			<Item Name="LocalizableStrings.DsnGetCountryInfo.Value" Value="Получить информацию о стране" />
+		</Items>
+	</Group>
+</Resources>

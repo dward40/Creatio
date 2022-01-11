@@ -1,0 +1,66 @@
+= MetaData.Schema.UId "ecd155b4-2b56-489a-8234-d504e3dfd899"
+= MetaData.Schema.A2 "DsnFavoritePokemonDatail"
+= MetaData.Schema.A5 "ae672e77-44bd-48a3-a20e-7eebc708f9a3"
+= MetaData.Schema.B6 "f1b69213-c6ed-eab1-67e9-f7fa99e843ad"
+= MetaData.Schema.B8 "7.18.4.1532"
+= MetaData.Schema.EG1.UId "5ad8413a-c1e1-49b5-9629-1afd40ea3351"
+= MetaData.Schema.EG1.A2 "DsnFavoritePokemonDatailEventsProcess"
+= MetaData.Schema.EG1.A5 "ae672e77-44bd-48a3-a20e-7eebc708f9a3"
+= MetaData.Schema.EG1.B1 []
+= MetaData.Schema.EG1.B3 []
++ MetaData.Schema.EG1.B8 "7.18.4.1532"
+= MetaData.Schema.EG1.FJ1 []
+= MetaData.Schema.EG1.BK37.A3 "bb4d6607-026b-4b27-b640-8f5c77c1e89d"
+= MetaData.Schema.EG1.BK37.A4 "bb4d6607-026b-4b27-b640-8f5c77c1e89d"
+= MetaData.Schema.EG1.BK3 []
+= MetaData.Schema.EG1.BK4 []
++ MetaData.Schema.EG1.Labels []
++ MetaData.Schema.D17 true
+= MetaData.Schema.D8 "1bab9dcf-17d5-49f8-9536-8e0064f1dce0"
++ MetaData.Schema.D4 "b6e8d5a3-d4ae-418a-b7b3-df22b84c2bc1"
++ MetaData.Schema.D2 {
+  "UId": "b6e8d5a3-d4ae-418a-b7b3-df22b84c2bc1",
+  "A2": "DsnName",
+  "A3": "ecd155b4-2b56-489a-8234-d504e3dfd899",
+  "A4": "ecd155b4-2b56-489a-8234-d504e3dfd899",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd",
+  "E5": false
+}
++ MetaData.Schema.D2 {
+  "UId": "13be9cbd-6aff-4e28-924c-0967443d12d7",
+  "A2": "DsnLookupPokemon",
+  "A3": "ecd155b4-2b56-489a-8234-d504e3dfd899",
+  "A4": "ecd155b4-2b56-489a-8234-d504e3dfd899",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "c8195ed4-311d-4d20-8790-f2285041157a",
+  "E6": true,
+  "E17": "DsnLookupPokemonId",
+  "E18": "DsnLookupPokemonDsnName"
+}
++ MetaData.Schema.D2 {
+  "UId": "853e8ef2-89c4-4620-8f5c-c0b13cb079dd",
+  "A2": "DsnLookupContact",
+  "A3": "ecd155b4-2b56-489a-8234-d504e3dfd899",
+  "A4": "ecd155b4-2b56-489a-8234-d504e3dfd899",
+  "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "16be3651-8fe2-4159-8dd0-a803d4683dd3",
+  "E6": true,
+  "E17": "DsnLookupContactId",
+  "E18": "DsnLookupContactName"
+}
+~ MetaData.Schema.D2 ["ae0e45ca-c495-4fe7-a39d-3ab7278e1617","e80190a5-03b2-4095-90f7-a193a960adee","ebf6bb93-8aa6-4a01-900d-c6ea67affe21","9928edec-4272-425a-93bb-48743fee4b04","3015559e-cbc6-406a-88af-07f7930be832","3fabd836-6a53-4d8d-9069-6df88d9dae1e","b6e8d5a3-d4ae-418a-b7b3-df22b84c2bc1","13be9cbd-6aff-4e28-924c-0967443d12d7","853e8ef2-89c4-4620-8f5c-c0b13cb079dd"]
+- MetaData.Schema.EG1.B6
+- MetaData.Schema.EG1.BK29
+- MetaData.Schema.EG1.BK30
+- MetaData.Schema.D1
+- MetaData.Schema.D20
++ MetaData.Schema.B7 false
++ MetaData.Schema.D2.["ae0e45ca-c495-4fe7-a39d-3ab7278e1617"].E16 false
++ MetaData.Schema.D2.["e80190a5-03b2-4095-90f7-a193a960adee"].E16 false
++ MetaData.Schema.D2.["ebf6bb93-8aa6-4a01-900d-c6ea67affe21"].E16 false
++ MetaData.Schema.D2.["9928edec-4272-425a-93bb-48743fee4b04"].E16 false
++ MetaData.Schema.D2.["3015559e-cbc6-406a-88af-07f7930be832"].E16 false
++ MetaData.Schema.D2.["3fabd836-6a53-4d8d-9069-6df88d9dae1e"].E16 false

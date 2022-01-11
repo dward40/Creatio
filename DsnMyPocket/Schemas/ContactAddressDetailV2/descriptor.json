@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "fb7d2d88-86a1-4f9a-a7f4-0a0f588bee60",
+    "Name": "ContactAddressDetailV2",
+    "ModifiedOnUtc": "\/Date(1639758708000)\/",
+    "Parent": {
+      "UId": "e11ebfda-be27-4b0f-b01c-7a82a244b00e",
+      "Name": "ContactAddressDetailV2"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема детали: \"Адреса Контакта\""
+  }
+}

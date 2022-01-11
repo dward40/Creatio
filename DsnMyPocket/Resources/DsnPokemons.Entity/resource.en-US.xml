@@ -3,7 +3,9 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Покемоны" />
+			<Item Name="Columns.DsnContact.Caption" Value="Контакт" />
 			<Item Name="Columns.DsnHeight.Caption" Value="Высота" />
+			<Item Name="Columns.DsnHw.Caption" Value="Hw" />
 			<Item Name="Columns.DsnLookupType.Caption" Value="Тип" />
 			<Item Name="Columns.DsnName.Caption" Value="Name" />
 			<Item Name="Columns.DsnNotes.Caption" Value="Notes" />
