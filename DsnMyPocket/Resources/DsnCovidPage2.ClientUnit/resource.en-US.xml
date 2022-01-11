@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="DsnCovidPage2" />
+			<Item Name="LocalizableStrings.DsnConfirmed.Value" Value="confirmed:" />
+			<Item Name="LocalizableStrings.DsnCountryCodeNull.Value" Value="Ошибка: выбранная точка не является страной" />
+			<Item Name="LocalizableStrings.DsnCovidError.Value" Value="Ошибка: На выбранную дату отсутствуют данные Covid-19" />
+			<Item Name="LocalizableStrings.DsnDeaths.Value" Value="deaths:" />
+			<Item Name="LocalizableStrings.DsnGeoCoderError.Value" Value="Ошибка запроса к сервису Яндекс.Геокодер" />
+			<Item Name="LocalizableStrings.DsnLat.Value" Value="Lat:" />
+			<Item Name="LocalizableStrings.DsnLon.Value" Value="Lon:" />
+			<Item Name="LocalizableStrings.DsnMoisture.Value" Value="Влажность:" />
+			<Item Name="LocalizableStrings.DsnStrigency.Value" Value="strigency:" />
+			<Item Name="LocalizableStrings.DsnTemp.Value" Value="Тепература:" />
+			<Item Name="LocalizableStrings.DsnWeatherDefault.Value" Value="https://yandex.ru/pogoda/static/og_image.jpeg" />
+			<Item Name="LocalizableStrings.DsnWindSpeed.Value" Value="Скорость ветра:" />
+			<Item Name="LocalizableStrings.DsnYaWeatherError.Value" Value="Ошибка: Нет данных о погоде по заданным координатам" />
+		</Items>
+	</Group>
+</Resources>

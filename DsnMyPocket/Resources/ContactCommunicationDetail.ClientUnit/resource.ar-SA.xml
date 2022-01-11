@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ar-SA">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ErrorRemoveMandrillBounce.Value" Value="تعذر إزالة البريد الإلكتروني الخاص بجهة الاتصال من القائمة السوداء  Mandrill" />
+			<Item Name="LocalizableStrings.NonActualCaption.Value" Value="(غير صالح)" />
+			<Item Name="LocalizableStrings.NonTopicalAddressCaptionMenu.Caption" Value="NonTopicalAddressCaptionMenu" />
+			<Item Name="LocalizableStrings.NonTopicalAddressCaptionMenu.Value" Value="غير صالح" />
+			<Item Name="LocalizableStrings.TopicalAddressCaptionMenu.Caption" Value="TopicalAddressCaptionMenu" />
+			<Item Name="LocalizableStrings.TopicalAddressCaptionMenu.Value" Value="صالح" />
+		</Items>
+	</Group>
+</Resources>

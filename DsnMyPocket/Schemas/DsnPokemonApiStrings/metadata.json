@@ -1,0 +1,44 @@
+﻿{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "ClientUnitSchemaManager",
+      "UId": "8627d4a0-60a8-4b34-bb06-b60d28503f5c",
+      "A2": "DsnPokemonApiStrings",
+      "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3",
+      "B1": [],
+      "B2": [
+        {
+          "UId": "fc81f7aa-aad4-6f83-9db0-4b3d2f0df56d",
+          "A2": "DsnPokemonDoenstExist",
+          "A3": "8627d4a0-60a8-4b34-bb06-b60d28503f5c",
+          "A4": "8627d4a0-60a8-4b34-bb06-b60d28503f5c",
+          "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3"
+        },
+        {
+          "UId": "63c9745e-b287-1016-8085-9acabd69c6b4",
+          "A2": "DsnPokemonAlreadyHas",
+          "A3": "8627d4a0-60a8-4b34-bb06-b60d28503f5c",
+          "A4": "8627d4a0-60a8-4b34-bb06-b60d28503f5c",
+          "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3"
+        },
+        {
+          "UId": "3712a5ac-7eda-7078-e26f-53e8b690dfa5",
+          "A2": "DsnEnterCorrectName",
+          "A3": "8627d4a0-60a8-4b34-bb06-b60d28503f5c",
+          "A4": "8627d4a0-60a8-4b34-bb06-b60d28503f5c",
+          "A5": "ae672e77-44bd-48a3-a20e-7eebc708f9a3"
+        }
+      ],
+      "B3": [],
+      "B6": "f1b69213-c6ed-eab1-67e9-f7fa99e843ad",
+      "B8": "7.18.4.1532",
+      "HD1": "50e3acc0-26fc-4237-a095-849a1d534bd3",
+      "HD4": 1,
+      "HD6": "null",
+      "HD5": [],
+      "HD7": [],
+      "HD8": [],
+      "HD11": []
+    }
+  }
+}

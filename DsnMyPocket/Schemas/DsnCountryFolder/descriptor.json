@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "e150251a-dbaa-4023-b661-b3a9dfce589c",
+    "Name": "DsnCountryFolder",
+    "ModifiedOnUtc": "\/Date(1640591733000)\/",
+    "Parent": {
+      "UId": "d602bf96-d029-4b07-9755-63c8f5cb5ed5",
+      "Name": "BaseFolder"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Группа Страна"
+  }
+}

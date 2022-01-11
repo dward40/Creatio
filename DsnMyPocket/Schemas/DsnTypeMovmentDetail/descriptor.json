@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "08ffa438-3ba4-4b33-a2e6-9cec88449de7",
+    "Name": "DsnTypeMovmentDetail",
+    "ModifiedOnUtc": "\/Date(1639055068000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема детали: \"Движения покемона\""
+  }
+}
