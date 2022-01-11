@@ -1,10 +1,12 @@
 define("DsnCovidPage2", [
   "ModalBox",
   "ServiceHelper",
+  "MaskHelper",
   "css!DsnButtonColorCss",
-], function (ModalBox, ServiceHelper) {
+], function (ModalBox, ServiceHelper,MaskHelper) {
   return {
     attributes: {
+	  $maskIdModalBox: {},
       Confirmed: {
         dataValueType: Terrasoft.DataValueType.INTEGER,
         type: Terrasoft.ViewModelColumnType.VIRTUAL_COLUMN,
@@ -24,13 +26,11 @@ define("DsnCovidPage2", [
         dataValueType: Terrasoft.DataValueType.TEXT,
         type: Terrasoft.ViewModelColumnType.VIRTUAL_COLUMN,
         value: "",
-        //precision: 14,
       },
       Lon: {
         dataValueType: Terrasoft.DataValueType.TEXT,
         type: Terrasoft.ViewModelColumnType.VIRTUAL_COLUMN,
         value: "",
-        //precision: 14,
       },
       Tepmperatura: {
         dataValueType: Terrasoft.DataValueType.INTEGER,
@@ -56,10 +56,22 @@ define("DsnCovidPage2", [
     methods: {
       onRender: function () {
         this.callParent(arguments);
+		this.$Date = this.GetCurrentDate();
         this.createWeatherImg();
         this.loadAPIYmaps(this.createmap);
+		
       },
-
+	   
+	   //Текущая дата
+	   GetCurrentDate: function(){
+			var today = new Date();
+			var dd = String(today.getDate()).padStart(2, '0');
+			var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+			var yyyy = today.getFullYear();
+			today = dd + '.' + mm + '.' + yyyy;
+			return today;
+		},
+		
       //Получаем необходимые данные для заполнения модального окна
       getDataServerDsnCovidYandex: function (lat, lon, date) {
         if (date == null) {
@@ -89,8 +101,8 @@ define("DsnCovidPage2", [
             this.$WindSpeed = objResult.windSpeed;
             this.$Moisture = objResult.moisture;
             this.updateWeatherImg(objResult.icon);
+			Terrasoft.Mask.hide(this.$maskIdModalBox);
 
-            //this.$Confirmed = objResult.stringency;
           },
           data: serviceData,
           scope: this,
@@ -147,9 +159,9 @@ define("DsnCovidPage2", [
             var thisPlacemark = e.get("target");
             // Определение координат метки
             var coords = thisPlacemark.geometry.getCoordinates();
-            console.log(coords);
             parentContent.$Lat = coords[0].toString();
             parentContent.$Lon = coords[1].toString();
+			parentContent.$maskIdModalBox = Terrasoft.Mask.show({selector: "#t-comp223"});
             parentContent.getDataServerDsnCovidYandex(
               parentContent.$Lat,
               parentContent.$Lon,

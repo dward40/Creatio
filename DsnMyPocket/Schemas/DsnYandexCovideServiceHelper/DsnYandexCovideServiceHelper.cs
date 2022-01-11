@@ -30,13 +30,6 @@ namespace Terrasoft.Configuration.DsnYandexCovideService
 
         }
 
-        //private T deserializeResponseJson<T>(HttpResponseMessage response, Type dto) {
-
-        //var body = response.Content;
-        //string responseString = body.ReadAsStringAsync().Result;
-        //var result = JsonConvert.DeserializeObject<T>(responseString);
-        //    return result;
-        //}
 
         public string GetDataHelper(string lat, string lon, string date)
         {
