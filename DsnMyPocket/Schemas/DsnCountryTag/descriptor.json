@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "b02d69d1-2074-415b-93c4-03cc5b2dd02c",
+    "Name": "DsnCountryTag",
+    "ModifiedOnUtc": "\/Date(1640591736000)\/",
+    "Parent": {
+      "UId": "9e3f203c-e905-4de5-9468-335b193f2439",
+      "Name": "BaseTag"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Тег раздела Страна"
+  }
+}

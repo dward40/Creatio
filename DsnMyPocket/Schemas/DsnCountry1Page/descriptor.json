@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "66ba01fe-63d4-46c6-8291-ab4332bc33d2",
+    "Name": "DsnCountry1Page",
+    "ModifiedOnUtc": "\/Date(1640591728000)\/",
+    "Parent": {
+      "UId": "d62293c0-7f14-44b1-b547-735fb40499cd",
+      "Name": "BaseModulePageV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Страница редактирования: \"Страна\""
+  }
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "2a3ea023-9cb5-46e7-b146-eefd0cc541ae",
+    "Name": "DsnCovidPage2",
+    "ModifiedOnUtc": "\/Date(1641889527000)\/",
+    "Parent": {
+      "UId": "b1ea6d50-78a5-443f-9d3c-2ba645946897",
+      "Name": "BaseModalBoxPage"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "DsnCovidPage2"
+  }
+}

@@ -97,6 +97,36 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
             return imageId;
         }
 
+       /// <summary>
+       /// Получает uri api Яндекс.Геокодер
+       /// </summary>
+       /// <returns>iru</returns>
+        public string GetGeoCoderApi()
+        {
+            var uri = (string)Terrasoft.Core.Configuration.SysSettings.GetValue(UserConnection, "DsnApiGeoCoder");
+            return uri;
+        }
+
+        /// <summary>
+        /// Получает uri api Covid.Oxc
+        /// </summary>
+        /// <returns>uri</returns>
+        public string GetOxCovidApi()
+        {
+            var uri = (string)Terrasoft.Core.Configuration.SysSettings.GetValue(UserConnection, "DsnOx");
+            return uri;
+        }
+
+        /// <summary>
+        /// Получает uri api Яндекс.Погода
+        /// </summary>
+        /// <returns>uri</returns>
+        public string GetOYaWeatherApi()
+        {
+            var uri = (string)Terrasoft.Core.Configuration.SysSettings.GetValue(UserConnection, "DsnYaWeather");
+            return uri;
+        }
+
     }
 
 }
