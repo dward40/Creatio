@@ -27,6 +27,8 @@ define("DsnCountry02b9fb02Section", ["ModalBox"], function (ModalBox) {
         values: {
           itemType: Terrasoft.ViewItemType.BUTTON,
           caption: { bindTo: "Resources.Strings.DsnGetCountryInfo" },
+		// Сразу избавляйся от всяких "My" в нейминге, если копируешь код откуда-нибудь.
+		// Если пишешь сам - то пиши сразу с правильным неймингом
           click: { bindTo: "onMyClick" },
           layout: {
             column: 1,
