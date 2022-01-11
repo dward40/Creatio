@@ -89,6 +89,7 @@ define("DsnCovidPage2", [
           callback: function (response) {
             console.log(response.GetDataResult);
             if (response.GetDataResult.includes("Ошибка")) {
+			  Terrasoft.Mask.hide(this.$maskIdModalBox);
               Terrasoft.showInformation(response.GetDataResult);
               return;
             }
