@@ -31,6 +31,7 @@ namespace Terrasoft.Configuration.DsnYandexGeocoderService
             }
             catch (Exception error)
             {
+                //Тут тоже нужно логирование (и в остальных местах тоже, если такие есть)
                 throw;
             }
 
