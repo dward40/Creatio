@@ -4,12 +4,13 @@ using System.ServiceModel.Web;
 using System.ServiceModel.Activation;
 using System;
 
-namespace Terrasoft.Configuration.DsnYandexCovideService
+
+namespace Terrasoft.Configuration.YandexWeatherService
 {
     [ServiceContract]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
 
-    public class DsnYandexCovideService: BaseService
+    public class DsnYandexWeatherService : BaseService
     {
 
 
@@ -18,25 +19,24 @@ namespace Terrasoft.Configuration.DsnYandexCovideService
                 ResponseFormat = WebMessageFormat.Json)]
 
         //Начальная точка входа в процедуру.
-        public string GetData(string lat, string lon, string date)
-        {   
+        public string GetWeatherdInfoJson(string lat, string lon)
+        {
 
-            DsnYandexCovideServiceHelper helper = new DsnYandexCovideServiceHelper(UserConnection);
+            DsnYandexWeatherServiceHelper helper = new DsnYandexWeatherServiceHelper(UserConnection);
             try
             {
-                var result = helper.GetData(lat, lon, date);
+                var result = helper.GetWeatherdInfoJson(lat, lon);
                 return result;
             }
             catch (Exception error)
             {
-               
-                return "Ошибка при выполнении запроса " + error.Message;
+                throw;
             }
-            
-            
+
+
 
         }
 
 
-        }
+    }
 }

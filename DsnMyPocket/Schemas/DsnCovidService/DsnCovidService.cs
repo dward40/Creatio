@@ -3,13 +3,15 @@ using Terrasoft.Web.Common;
 using System.ServiceModel.Web;
 using System.ServiceModel.Activation;
 using System;
+using Terrasoft.Configuration.DsnYandexGeocoderHelper;
+using Terrasoft.Configuration.DsnCovidServiceHelper;
 
-namespace Terrasoft.Configuration.DsnYandexCovideService
+namespace Terrasoft.Configuration.DsnCovidService
 {
     [ServiceContract]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
 
-    public class DsnYandexCovideService: BaseService
+    public class CovidService : BaseService
     {
 
 
@@ -18,25 +20,25 @@ namespace Terrasoft.Configuration.DsnYandexCovideService
                 ResponseFormat = WebMessageFormat.Json)]
 
         //Начальная точка входа в процедуру.
-        public string GetData(string lat, string lon, string date)
-        {   
+        public string GetCovidInfo(string countryCode, DateTime date)
+        {
 
-            DsnYandexCovideServiceHelper helper = new DsnYandexCovideServiceHelper(UserConnection);
+            CovidHelper helper = new CovidHelper(UserConnection);
+
             try
             {
-                var result = helper.GetData(lat, lon, date);
+                var result = helper.GetCovidInfoJson(countryCode, date);
                 return result;
             }
             catch (Exception error)
             {
-               
-                return "Ошибка при выполнении запроса " + error.Message;
+                throw;
             }
-            
-            
+
+
 
         }
 
 
-        }
+    }
 }

@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "da2678f0-96c4-4196-a395-e09742b2da0f",
+    "Name": "DsnCountrySection",
+    "ModifiedOnUtc": "\/Date(1641992423000)\/",
+    "Parent": {
+      "UId": "7912fb69-4fee-429f-8b23-93943c35d66d",
+      "Name": "BaseSectionV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема раздела: \"Страна\""
+  }
+}

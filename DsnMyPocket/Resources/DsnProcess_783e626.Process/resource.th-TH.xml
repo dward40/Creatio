@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Resources Culture="th-TH">
-	<Group Type="String">
-		<Items>
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Id.Caption" Value="ไอดี" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Name.Caption" Value="ชื่อเต็ม" />
-		</Items>
-	</Group>
-</Resources>

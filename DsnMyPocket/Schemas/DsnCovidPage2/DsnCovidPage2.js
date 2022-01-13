@@ -56,20 +56,20 @@ define("DsnCovidPage2", [
     methods: {
       onRender: function () {
         this.callParent(arguments);
-		this.$Date = this.GetCurrentDate();
+		this.$Date = new Date();
         this.createWeatherImg();
         this.loadAPIYmaps(this.createmap);
 		
       },
 	   
 	   //Текущая дата
-	   GetCurrentDate: function(){
-			var today = new Date();
-			var dd = String(today.getDate()).padStart(2, '0');
-			var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-			var yyyy = today.getFullYear();
-			today = dd + '.' + mm + '.' + yyyy;
-			return today;
+	   convertDate: function(date){
+		   
+			var dd = String(date.getDate()).padStart(2, '0');
+			var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+			var yyyy = date.getFullYear();
+			date = yyyy + '-' + mm + '-' + dd;
+			return date;
 		},
 		
       //Получаем необходимые данные для заполнения модального окна
@@ -80,7 +80,7 @@ define("DsnCovidPage2", [
         var serviceData = {
           lat: lat,
           lon: lon,
-          date: date,
+          date: this.convertDate(date),
         };
         var config = {
           serviceName: "DsnYandexCovideService",
@@ -162,7 +162,7 @@ define("DsnCovidPage2", [
             var coords = thisPlacemark.geometry.getCoordinates();
             parentContent.$Lat = coords[0].toString();
             parentContent.$Lon = coords[1].toString();
-			parentContent.$maskIdModalBox = Terrasoft.Mask.show({selector: "#t-comp223"});
+			parentContent.$maskIdModalBox = Terrasoft.Mask.show({selector: "#CovidModalBoxContainer"});
             parentContent.getDataServerDsnCovidYandex(
               parentContent.$Lat,
               parentContent.$Lon,

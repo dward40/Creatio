@@ -101,7 +101,7 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
        /// Получает uri api Яндекс.Геокодер
        /// </summary>
        /// <returns>iru</returns>
-        public string GetGeoCoderApi()
+        public string GetGeoCoderApiUrl()
         {
             var uri = (string)Terrasoft.Core.Configuration.SysSettings.GetValue(UserConnection, "DsnApiGeoCoder");
             return uri;
@@ -111,7 +111,7 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
         /// Получает uri api Covid.Oxc
         /// </summary>
         /// <returns>uri</returns>
-        public string GetOxCovidApi()
+        public string GetOxCovidApiUrl()
         {
             var uri = (string)Terrasoft.Core.Configuration.SysSettings.GetValue(UserConnection, "DsnOx");
             return uri;
@@ -121,12 +121,18 @@ namespace Terrasoft.Configuration.DsnPokemonIntegrationService
         /// Получает uri api Яндекс.Погода
         /// </summary>
         /// <returns>uri</returns>
-        public string GetOYaWeatherApi()
+        public string GetOYaWeatherApiUrl()
         {
             var uri = (string)Terrasoft.Core.Configuration.SysSettings.GetValue(UserConnection, "DsnYaWeather");
             return uri;
         }
 
+
+        public string GetOYandexWeatherApiKey()
+        {
+            var uri = (string)Terrasoft.Core.Configuration.SysSettings.GetValue(UserConnection, "DsnYandexWeatherApiKey");
+            return uri;
+        }
     }
 
 }

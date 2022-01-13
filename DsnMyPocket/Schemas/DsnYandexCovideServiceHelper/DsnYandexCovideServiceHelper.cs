@@ -1,4 +1,4 @@
-using Common.Logging;
+п»їusing Common.Logging;
 using Newtonsoft.Json;
 using System.Net.Http;
 using Terrasoft.Configuration.DsnPokemonIntegrationService;
@@ -6,100 +6,70 @@ using Terrasoft.Core;
 using System.Globalization;
 using System.Collections.Generic;
 using Terrasoft.Configuration.DsnYaWeatherDTO;
+using System.Net;
+using System;
+using Terrasoft.Configuration.DsnYandexGeocoderService;
+using Terrasoft.Configuration.DsnCovidService;
+using Terrasoft.Configuration.YandexWeatherService;
 
 namespace Terrasoft.Configuration.DsnYandexCovideService
 {
     public class DsnYandexCovideServiceHelper
     {
 
-        //Блок переменных//
-        private readonly UserConnection userConnectionHelper;
-        private readonly DsnDataBaseClient _dbClient;
-        private readonly DsnYandexCovidApiClient _apiClient;
+        //Р‘Р»РѕРє РїРµСЂРµРјРµРЅРЅС‹С…//
+        private readonly UserConnection userConnection;
         public ILog log;
-        private HttpResponseMessage responseGeoCoder;
-        private HttpResponseMessage responseCovidInfo;
-        private HttpResponseMessage responseWeahter;
 
         public DsnYandexCovideServiceHelper(UserConnection userConnection)
         {
-            _dbClient = new DsnDataBaseClient(userConnection);
-            _apiClient = new DsnYandexCovidApiClient();
-            userConnectionHelper = userConnection;
-
-
+            this.userConnection = userConnection;
         }
 
 
-        public string GetDataHelper(string lat, string lon, string date)
+
+
+        public string GetData(string lat, string lon, string date)
         {
-            //Переменные
-            string apiGeoCoder = _dbClient.GetGeoCoderApi();
-            string ISOAlpha3Code = "";
-            //Преобразуем к нужному типу дату(dddd-mm-dd)
-            var resultDate = date.Substring(0, 10);
+            //РџСЂРµРѕР±СЂР°Р·СѓРµРј РґР°С‚Сѓ РІ DateTime
+            var dateTime = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
-
-            //Получаем необходимые данные по координатам
-
-            responseGeoCoder = _apiClient.GetCountryInfo(apiGeoCoder, lat, lon);
-
-            if (responseGeoCoder.StatusCode.ToString() != "OK")
-            {
-                return userConnectionHelper.GetLocalizableString("DsnCovidPage2", "DsnGeoCoderError");
-            }
-
-            var body = responseGeoCoder.Content;
-            string responseString = body.ReadAsStringAsync().Result;
-            var geoData = JsonConvert.DeserializeObject<DsnGeoCoderDTO>(responseString);
-            var countryCode = geoData.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.Address.country_code;
+            //РџРѕР»СѓС‡Р°РµРј РєРѕРґ СЃС‚СЂР°РЅС‹ РїРѕ API РЇРЅРґРµРєСЃР°Р“РµРѕРєРѕРґРµСЂР°
+            YandexGeocoderService _yandexGeocoderService = new YandexGeocoderService();
+            var json = _yandexGeocoderService.GetGeocoderInfo(lat, lon);
+            var geoData = JsonConvert.DeserializeObject<DsnGeoCoderDTO>(json);
+            var countryCode = geoData?.response.GeoObjectCollection?.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.Address.country_code ?? null;
 
             if (countryCode == null)
             {
-                return userConnectionHelper.GetLocalizableString("DsnCovidPage2", "DsnCountryCodeNull");
+                return this.userConnection.GetLocalizableString("DsnCovidPage2", "DsnCountryCodeNull");
             }
 
-            //Преобразуем alpha 2 -> alpha 3
+            //РџСЂРµРѕР±СЂР°Р·СѓРµРј alpha 2 -> alpha 3
             RegionInfo info = new RegionInfo(countryCode);
-            ISOAlpha3Code = info.ThreeLetterISORegionName;
+            var ISOAlpha3Code = info.ThreeLetterISORegionName;
 
-            //Получаем данные о Covid-19 по стране и дате
-
-            var covidApiUri = _dbClient.GetOxCovidApi();
-            responseCovidInfo = _apiClient.GetCovidData(covidApiUri, ISOAlpha3Code, resultDate);
-
-            if (responseCovidInfo.StatusCode.ToString() != "OK")
-            {
-                return userConnectionHelper.GetLocalizableString("DsnCovidPage2", "DsnCovidError");
-            }
-
-            var bodyCovid = responseCovidInfo.Content;
-            string responseStringCovid = bodyCovid.ReadAsStringAsync().Result;
-            var covidData = JsonConvert.DeserializeObject<DsnCovidDTO>(responseStringCovid);
+            //РџРѕР»СѓС‡Р°РµРј РґР°РЅРЅС‹Рµ РїРѕ Covid-19
+            CovidService _covidService = new CovidService();
+            json = _covidService.GetCovidInfo(ISOAlpha3Code, dateTime);
+            var covidData = JsonConvert.DeserializeObject<DsnCovidDTO>(json);
 
             var confirmed = covidData.stringencyData.confirmed;
             var deahts = covidData.stringencyData.deaths;
             var stringency = covidData.stringencyData.stringency;
 
-            //По координатам получаем погоду
-            var WeatherApiUri = _dbClient.GetOYaWeatherApi();
-            responseWeahter = _apiClient.GetWeatherData(WeatherApiUri, lat, lon);
-
-            if (responseWeahter.StatusCode.ToString() != "OK")
-            {
-                return userConnectionHelper.GetLocalizableString("DsnCovidPage2", "DsnYaWeatherError");
-            }
-
-            var bodyWeahter = responseWeahter.Content;
-            string responseStringWeather = bodyWeahter.ReadAsStringAsync().Result;
-            var weatherData = JsonConvert.DeserializeObject<DsnYWeatherDTO>(responseStringWeather);
+            //РџРѕР»СѓС‡Р°РµРј РґР°РЅРЅС‹Рµ РЇРЅРґРµРєСЃ.РџРѕРіРѕРґР°
+            DsnYandexWeatherService _yandexWeatherService = new DsnYandexWeatherService();
+            json = _yandexWeatherService.GetWeatherdInfoJson(lat, lon);
+            var weatherData = JsonConvert.DeserializeObject<DsnYWeatherDTO>(json);
 
             var temperature = weatherData.fact.temp;
-            var moisture = weatherData.fact.humidity;
+            var humidity = weatherData.fact.humidity;
             var windSpeed = weatherData.fact.wind_speed;
             var weatherIconName = weatherData.fact.icon;
 
 
+            //Р¤РѕСЂРјРёСЂСѓРµС‚ JSON РґР»СЏ РѕС‚РїСЂР°РІРєРё РЅР° РєР»РёРµРЅС‚
             var paramToJson = new Dictionary<string, string>()
                 {
                     { "confirmed", confirmed.ToString()},
@@ -108,7 +78,7 @@ namespace Terrasoft.Configuration.DsnYandexCovideService
                     { "icon", weatherIconName},
                     { "temperature",temperature.ToString()},
                     { "windSpeed",windSpeed.ToString()},
-                    { "moisture",moisture.ToString()},
+                    { "moisture",humidity.ToString()},
 
 
 
@@ -116,10 +86,9 @@ namespace Terrasoft.Configuration.DsnYandexCovideService
             var resultJson = JsonConvert.SerializeObject(paramToJson);
             return resultJson;
 
-
-
-
         }
+
+
 
 
     }
