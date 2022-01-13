@@ -43,6 +43,7 @@ define("DsnCountrySection", ["ModalBox"], function (ModalBox) {
 				this.sandbox.subscribe("DataFromModal", function(arg) {
 				}, this, [this.sandbox.id + "_" + "DsnCovidModule"]);
 			},
+	    		// Тут тоже самое, что и с MyButton
 			loadMyModal: function() {
 				var sandbox = this.sandbox;
 				var config = {
