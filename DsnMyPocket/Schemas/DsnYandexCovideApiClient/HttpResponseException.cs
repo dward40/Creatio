@@ -4,6 +4,8 @@ using System.Runtime.Serialization;
 
 namespace Terrasoft.Configuration
 {
+    
+    //Непонятно, зачем этот класс, есть WebException
     [Serializable]
     internal class HttpResponseException : Exception
     {

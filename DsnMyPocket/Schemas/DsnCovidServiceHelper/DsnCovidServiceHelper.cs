@@ -15,6 +15,7 @@ namespace Terrasoft.Configuration.DsnCovidServiceHelper
         private readonly UserConnection userConnection;
         private readonly DsnYandexCovidApiClient _apiClient;
         public readonly DsnDataBaseClient _dbClient;
+        //result надо перенести в метод, поскольку он используется только в этом методе
         string result;
 
 

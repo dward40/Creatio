@@ -24,7 +24,8 @@ namespace Terrasoft.Configuration
             if (result.StatusCode != HttpStatusCode.OK)
                 {
                 //return result.StatusCode.ToString() + apiUrl;
-                 
+                // Добавить логирование. 
+                //Вместо result.StatusCode.ToString() +" "+ apiUrl можно писать $"{result.StatusCode} {apiUrl}"
                 throw new HttpResponseException(result.StatusCode.ToString() +" "+ apiUrl);
 
             }
