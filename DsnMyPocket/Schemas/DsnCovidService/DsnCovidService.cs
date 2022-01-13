@@ -32,6 +32,7 @@ namespace Terrasoft.Configuration.DsnCovidService
             }
             catch (Exception error)
             {
+                // Тут было бы неплохо добавить логирование ошибки
                 throw;
             }
 
