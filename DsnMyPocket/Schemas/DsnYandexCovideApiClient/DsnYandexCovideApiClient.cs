@@ -30,7 +30,7 @@ namespace Terrasoft.Configuration
                 throw new WebException(result.StatusCode.ToString() +" "+ apiUrl);
                 
             }
-            log.Info("Successful " + $"{result.StatusCode} {apiUrl}");
+            log.Info($"Successful: {result.StatusCode} {apiUrl}");
             var body = result.Content;
             string responseString = body.ReadAsStringAsync().Result;
 
