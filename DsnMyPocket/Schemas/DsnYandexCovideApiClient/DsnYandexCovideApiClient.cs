@@ -27,7 +27,7 @@ namespace Terrasoft.Configuration
                 {
 
                 log.Error("Error: " + $"{result.StatusCode} {apiUrl}");
-                throw new HttpResponseException(result.StatusCode.ToString() +" "+ apiUrl);
+                throw new WebException(result.StatusCode.ToString() +" "+ apiUrl);
                 
             }
             log.Info("Successful " + $"{result.StatusCode} {apiUrl}");
