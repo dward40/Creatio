@@ -5,6 +5,7 @@ using System.ServiceModel.Activation;
 using System;
 using Terrasoft.Configuration.DsnYandexGeocoderHelper;
 using Terrasoft.Configuration.DsnCovidServiceHelper;
+using Common.Logging;
 
 namespace Terrasoft.Configuration.DsnCovidService
 {
@@ -13,7 +14,7 @@ namespace Terrasoft.Configuration.DsnCovidService
 
     public class CovidService : BaseService
     {
-
+        ILog log = LogManager.GetLogger("Internal testing");
 
         [OperationContract]
         [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped,
@@ -26,12 +27,14 @@ namespace Terrasoft.Configuration.DsnCovidService
             CovidHelper helper = new CovidHelper(UserConnection);
 
             try
-            {
+            {  
                 var result = helper.GetCovidInfoJson(countryCode, date);
+                log.Info("Успешный запрос: " + result);
                 return result;
             }
             catch (Exception error)
             {
+                log.Error("errorr: " + error.Message);
                 throw;
             }
 

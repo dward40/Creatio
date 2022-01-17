@@ -43,7 +43,7 @@ define("DsnCountrySection", ["ModalBox"], function (ModalBox) {
 				this.sandbox.subscribe("DataFromModal", function(arg) {
 				}, this, [this.sandbox.id + "_" + "DsnCovidModule"]);
 			},
-			loadMyModal: function() {
+			loadCovidModalBox: function() {
 				var sandbox = this.sandbox;
 				var config = {
 					heightPixels: 420,
@@ -60,7 +60,7 @@ define("DsnCountrySection", ["ModalBox"], function (ModalBox) {
 				document.getElementById(renderTo.id).id = "CovidModalBoxContainer";
 			},
 			getInfoCountry: function() {
-				this.loadMyModal();
+				this.loadCovidModalBox();
 			},
 			onEntityInitialized: function() {
 				this.callParent(arguments);
