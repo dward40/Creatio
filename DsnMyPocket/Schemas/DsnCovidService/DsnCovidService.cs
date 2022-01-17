@@ -14,7 +14,7 @@ namespace Terrasoft.Configuration.DsnCovidService
 
     public class CovidService : BaseService
     {
-        ILog log = LogManager.GetLogger("Internal testing");
+        ILog log = LogManager.GetLogger("Covid_Api");
 
         [OperationContract]
         [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped,
@@ -29,7 +29,7 @@ namespace Terrasoft.Configuration.DsnCovidService
             try
             {  
                 var result = helper.GetCovidInfoJson(countryCode, date);
-                log.Info("Успешный запрос: " + result);
+                log.Info($"Успешный запрос к Covid_Api: код страны={countryCode}, на дату={date}");
                 return result;
             }
             catch (Exception error)

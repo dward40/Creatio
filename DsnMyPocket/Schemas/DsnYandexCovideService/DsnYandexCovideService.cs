@@ -3,6 +3,7 @@ using Terrasoft.Web.Common;
 using System.ServiceModel.Web;
 using System.ServiceModel.Activation;
 using System;
+using Common.Logging;
 
 namespace Terrasoft.Configuration.DsnYandexCovideService
 {
@@ -11,7 +12,7 @@ namespace Terrasoft.Configuration.DsnYandexCovideService
 
     public class DsnYandexCovideService: BaseService
     {
-
+        ILog log = LogManager.GetLogger("Internal testing");
 
         [OperationContract]
         [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped,
@@ -25,11 +26,12 @@ namespace Terrasoft.Configuration.DsnYandexCovideService
             try
             {
                 var result = helper.GetData(lat, lon, date);
+                log.Info($"Успешный запрос данных {lat}, lon={lon}, date={date}");
                 return result;
             }
             catch (Exception error)
             {
-               
+                log.Error($"Error: {error.Message}");
                 return "Ошибка при выполнении запроса " + error.Message;
             }
             
