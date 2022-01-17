@@ -1,4 +1,5 @@
-﻿using Google.Apis.Util;
+﻿using Common.Logging;
+using Google.Apis.Util;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -9,6 +10,7 @@ namespace Terrasoft.Configuration
     public class DsnYandexCovidApiClient
     {
         private HttpResponseMessage result;
+        ILog log = LogManager.GetLogger("Internal testing");
         public string GetResponseApi(string apiUrl, Dictionary<string, string> headers = null) {
 
             HttpClient httpClient = new HttpClient();
@@ -20,15 +22,15 @@ namespace Terrasoft.Configuration
                 }
             }
             result = httpClient.GetAsync(apiUrl).Result;
-
+            
             if (result.StatusCode != HttpStatusCode.OK)
                 {
-                //return result.StatusCode.ToString() + apiUrl;
-                 
+
+                log.Error("Error: " + $"{result.StatusCode} {apiUrl}");
                 throw new HttpResponseException(result.StatusCode.ToString() +" "+ apiUrl);
-
+                
             }
-
+            log.Info("Successful " + $"{result.StatusCode} {apiUrl}");
             var body = result.Content;
             string responseString = body.ReadAsStringAsync().Result;
 
