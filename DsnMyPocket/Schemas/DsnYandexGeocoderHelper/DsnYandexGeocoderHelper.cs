@@ -15,7 +15,6 @@ namespace Terrasoft.Configuration.DsnYandexGeocoderHelper
         private readonly UserConnection userConnection;
         private readonly DsnYandexCovidApiClient _apiClient;
         public readonly DsnDataBaseClient _dbClient;
-        string result;
 
 
         public GeocoderHelper(UserConnection userConnection){
@@ -37,10 +36,7 @@ namespace Terrasoft.Configuration.DsnYandexGeocoderHelper
             httpValueCollection["lat"] = lat;
             var apiUrl = apiUrlGeoCoder + httpValueCollection.ToString();
 
-            result = _apiClient.GetResponseApi(apiUrl);
-
-            
-           //return this.userConnection.GetLocalizableString("DsnCovidPage2", "DsnGeoCoderError");
+            var result = _apiClient.GetResponseApi(apiUrl);
                        
             return result;
         }
