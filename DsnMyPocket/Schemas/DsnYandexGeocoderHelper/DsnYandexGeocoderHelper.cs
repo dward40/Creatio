@@ -27,14 +27,13 @@ namespace Terrasoft.Configuration.DsnYandexGeocoderHelper
         {
             
             string apiUrlGeoCoder = _dbClient.GetGeoCoderApiUrl();
-            if (apiUrlGeoCoder.Substring(apiUrlGeoCoder.Length - 1) != "?")
+            if (apiUrlGeoCoder.Substring(apiUrlGeoCoder.Length - 1) != "=")
             {
-                apiUrlGeoCoder = apiUrlGeoCoder + "?";
+                apiUrlGeoCoder = apiUrlGeoCoder + "=";
             }
             var httpValueCollection = HttpUtility.ParseQueryString(string.Empty);
-            httpValueCollection["lon"] = lon;
-            httpValueCollection["lat"] = lat;
-            var apiUrl = apiUrlGeoCoder + httpValueCollection.ToString();
+            httpValueCollection[""] = lon + "," +lat;
+            var apiUrl = apiUrlGeoCoder + httpValueCollection.ToString().Remove(0,1);
 
             var result = _apiClient.GetResponseApi(apiUrl);
                        
